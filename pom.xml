@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.jmeter</groupId>
+	<artifactId>jmeter-reporting</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>jmeter-reporting</name>
+
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>	
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>lucaspouzac</id>
+			<name>Lucas Pouzac</name>
+			<roles>
+				<role>Comitter</role>
+			</roles>
+		</developer>
+	</developers>
+
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/lucaspouzac/jmeter-reporting/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>BuildHive CloudBees</system>
+		<url>https://buildhive.cloudbees.com/job/lucaspouzac/job/jmeter-reporting/</url>
+	</ciManagement>
+
+	<scm>
+		<connection>scm:git:git@github.com:lucaspouzac/jmeter-reporting.git</connection>
+		<developerConnection>scm:git:git@github.com:lucaspouzac/jmeter-reporting.git</developerConnection>
+		<url>https://github.com/lucaspouzac/jmeter-reporting</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<properties>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<restx.version>0.31.1</restx.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-core</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-security-basic</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-core-annotation-processor</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-jongo</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-factory</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-factory-admin</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-monitor-admin</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-server-jetty</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-apidocs</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-specs-admin</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-admin</artifactId>
+			<version>${restx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.0.13</version>
+		</dependency>
+
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-jongo-specs-tests</artifactId>
+			<version>${restx.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.restx</groupId>
+			<artifactId>restx-specs-tests</artifactId>
+			<version>${restx.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
