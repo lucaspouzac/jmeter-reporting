@@ -1,0 +1,26 @@
+title: "should create sample"
+given:
+  - time: 2014-03-26T14:30:00Z
+  - collection: samples
+    sequence: 5167cec5856107c479739654, 5167cec5856107c479739655
+wts:
+  - when: GET samples
+    then: "[ ]"
+  - when: |
+          POST samples
+
+          { "hn" : "hostname" }
+    then: |
+          { "_id": "5167cec5856107c479739654", "hn": "hostname", "gt": null, "rc": null, "rcOk": null, "rm": null, "tn": null, "lb": null, "data": null, "sd": null, "t": null, "s": null, "dt": null, "de": null, "reqH": null, "resH": null, "ct": null, "it": null, "et": null, "st": null, "byt": null, "lt": null, "url": null, "at": null, "hs": null, "bs": null }
+  - when: |
+          POST samples
+
+          { "hn": "hostname", "gt": 1, "rc": "200", "rcOk": true, "rm": "Response message", "tn": "Thread name", "lb": "Sample label", "data": "Response data", "sd": "Sampler data", "t": 1, "s": true, "dt": "Data type", "de": "Data encoding", "reqH": "Request headers", "resH": "Response headers", "ct": "Content type", "it": 1, "et": 1, "st": 1, "byt": 1, "lt": 1, "url": "Url", "at": 1, "hs": 1, "bs": 1 }
+    then: |
+          { "_id": "5167cec5856107c479739655", "hn": "hostname", "gt": 1, "rc": "200", "rcOk": true, "rm": "Response message", "tn": "Thread name", "lb": "Sample label", "data": "Response data", "sd": "Sampler data", "t": 1, "s": true, "dt": "Data type", "de": "Data encoding", "reqH": "Request headers", "resH": "Response headers", "ct": "Content type", "it": 1, "et": 1, "st": 1, "byt": 1, "lt": 1, "url": "Url", "at": 1, "hs": 1, "bs": 1 }         
+  - when: GET samples
+    then: |
+        [
+          { "_id": "5167cec5856107c479739654", "hn": "hostname", "gt": null, "rc": null, "rcOk": null, "rm": null, "tn": null, "lb": null, "data": null, "sd": null, "t": null, "s": null, "dt": null, "de": null, "reqH": null, "resH": null, "ct": null, "it": null, "et": null, "st": null, "byt": null, "lt": null, "url": null, "at": null, "hs": null, "bs": null },
+          { "_id": "5167cec5856107c479739655", "hn": "hostname", "gt": 1, "rc": "200", "rcOk": true, "rm": "Response message", "tn": "Thread name", "lb": "Sample label", "data": "Response data", "sd": "Sampler data", "t": 1, "s": true, "dt": "Data type", "de": "Data encoding", "reqH": "Request headers", "resH": "Response headers", "ct": "Content type", "it": 1, "et": 1, "st": 1, "byt": 1, "lt": 1, "url": "Url", "at": 1, "hs": 1, "bs": 1 }
+        ]
