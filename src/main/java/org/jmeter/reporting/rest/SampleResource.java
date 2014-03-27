@@ -1,8 +1,11 @@
 package org.jmeter.reporting.rest;
 
+import java.util.List;
+
 import javax.inject.Named;
 
 import org.jmeter.reporting.domain.Sample;
+import org.jongo.Find;
 
 import restx.annotations.GET;
 import restx.annotations.POST;
@@ -25,12 +28,14 @@ public class SampleResource {
 	}
 
 	@GET("/samples")
-	public Iterable<Sample> findSamples(Optional<String> name) {
-		if (name.isPresent()) {
-			return samples.get().find("{name: #}", name.get()).as(Sample.class);
-		} else {
-			return samples.get().find().as(Sample.class);
-		}
+	public Iterable<Sample> findSamples(Optional<Integer> skip, Optional<Integer> limit) {
+		List<Object> paramaters = null;
+		String query = null;
+		
+		Find find = samples.get().find(query, paramaters);
+		
+		find.skip(skip.or(0)).limit(limit.or(10));
+		return find.as(Sample.class);
 	}
 
 	@POST("/samples")

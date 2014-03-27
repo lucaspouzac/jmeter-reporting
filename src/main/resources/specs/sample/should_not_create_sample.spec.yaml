@@ -1,8 +1,7 @@
-title: "should create sample"
+title: "should not create sample (bean validation errors)"
 given:
   - time: 2014-03-26T14:30:00Z
   - collection: samples
-    sequence: 5167cec5856107c479739654, 5167cec5856107c479739655
 wts:
   - when: GET samples
     then: "[ ]"
