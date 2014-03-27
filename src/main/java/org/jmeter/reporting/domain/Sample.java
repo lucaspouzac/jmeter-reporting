@@ -1,5 +1,7 @@
 package org.jmeter.reporting.domain;
 
+import javax.validation.constraints.NotNull;
+
 import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
@@ -11,13 +13,16 @@ public class Sample {
 	@ObjectId
 	private String key;
 
-	@JsonProperty(value = "hn", required = true)
+	@JsonProperty(value = "hn")
+	@NotNull
 	private String hostname;
 
-	@JsonProperty(value = "gt", required = true)
+	@JsonProperty(value = "gt")
+	@NotNull
 	private Integer groupThreads;
 
-	@JsonProperty(value = "rc", required = true)
+	@JsonProperty(value = "rc")
+	@NotNull
 	private String responseCode;
 
 	@JsonProperty(value = "rcOk")
@@ -27,9 +32,11 @@ public class Sample {
 	private String responseMessage;
 
 	@JsonProperty(value = "tn")
+	@NotNull
 	private String threadName;
 
 	@JsonProperty(value = "lb")
+	@NotNull
 	private String sampleLabel;
 
 	@JsonProperty(value = "data")
@@ -39,9 +46,11 @@ public class Sample {
 	private String samplerData;
 
 	@JsonProperty(value = "t")
-	private Long time;
+	@NotNull
+	private Integer elapsedTime;
 
 	@JsonProperty(value = "s")
+	@NotNull
 	private Boolean successful;
 
 	@JsonProperty(value = "dt")
@@ -68,10 +77,12 @@ public class Sample {
 	@JsonProperty(value = "st")
 	private Long startTime;
 
-	@JsonProperty(value = "byt")
+	@JsonProperty(value = "by")
+	@NotNull
 	private Integer bytes;
 
 	@JsonProperty(value = "lt")
+	@NotNull
 	private Long latency;
 
 	@JsonProperty(value = "url")
@@ -166,12 +177,12 @@ public class Sample {
 		this.samplerData = samplerData;
 	}
 
-	public Long getTime() {
-		return time;
+	public Integer getElapsedTime() {
+		return elapsedTime;
 	}
 
-	public void setTime(Long time) {
-		this.time = time;
+	public void setTime(Integer elapsedTime) {
+		this.elapsedTime = elapsedTime;
 	}
 
 	public Boolean getSuccessful() {

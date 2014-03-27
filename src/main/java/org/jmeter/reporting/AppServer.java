@@ -25,7 +25,7 @@ public class AppServer {
          * it with -Drestx.mode=prod or change the default here
          */
         System.setProperty("restx.mode", System.getProperty("restx.mode", "dev"));
-        System.setProperty("restx.app.package", "jmeter.reporting");
+        System.setProperty("restx.app.package", "org.jmeter.reporting");
 
         server.startAndAwait();
     }
