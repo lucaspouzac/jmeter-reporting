@@ -14,7 +14,7 @@
 			<name>Apache 2</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
 			<distribution>repo</distribution>
-			<comments>A business-friendly OSS license</comments>	
+			<comments>A business-friendly OSS license</comments>
 		</license>
 	</licenses>
 
@@ -131,6 +131,12 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.flapdoodle.embed</groupId>
+			<artifactId>de.flapdoodle.embed.mongo</artifactId>
+			<version>1.42</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

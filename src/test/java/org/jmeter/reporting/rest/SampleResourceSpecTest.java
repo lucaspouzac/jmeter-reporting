@@ -7,7 +7,7 @@ import restx.tests.RestxSpecTestsRunner;
 
 @RunWith(RestxSpecTestsRunner.class)
 @FindSpecsIn("specs/sample")
-public class SampleResourceSpecTest {
+public class SampleResourceSpecTest extends AbstractMongoDBTest {
 
     /**
      * Useless, thanks to both @RunWith(RestxSpecTestsRunner.class) & @FindSpecsIn()
