@@ -7,7 +7,7 @@ Pre-requisite : Default local MongoDB installation (port 27017) or add -Dmongo.u
 
 Admin role necessary to run Integration Test : https://github.com/restx/restx/issues/76 ==> Unable to run integration test on cloud
 
-Run tests YAML : mvn clean test
+Run tests YAML : mvn clean test (add -Dhttp.proxyHost=host -Dhttp.proxyPort=port if you are behind a proxy to download MongoDB)
 
 Import eclispe : mvn eclipse:clean eclipse:eclipse
 

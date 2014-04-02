@@ -2,22 +2,11 @@ package org.jmeter.reporting.rest;
 
 import org.junit.runner.RunWith;
 
+import restx.jongo.specs.tests.MongoRestxSpecTestsRunner;
 import restx.tests.FindSpecsIn;
-import restx.tests.RestxSpecTestsRunner;
 
-@RunWith(RestxSpecTestsRunner.class)
+@RunWith(MongoRestxSpecTestsRunner.class)
 @FindSpecsIn("specs/sample")
-public class SampleResourceSpecTest extends AbstractMongoDBTest {
+public class SampleResourceSpecTest {
 
-    /**
-     * Useless, thanks to both @RunWith(RestxSpecTestsRunner.class) & @FindSpecsIn()
-     *
-     * @Rule
-     * public RestxSpecRule rule = new RestxSpecRule();
-     *
-     * @Test
-     * public void test_spec() throws Exception {
-     *     rule.runTest(specTestPath);
-     * }
-     */
 }
