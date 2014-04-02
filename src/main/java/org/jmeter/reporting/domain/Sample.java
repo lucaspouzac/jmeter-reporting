@@ -1,5 +1,6 @@
 package org.jmeter.reporting.domain;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.jongo.marshall.jackson.oid.Id;
@@ -13,6 +14,11 @@ public class Sample {
 	@ObjectId
 	private String key;
 
+	@JsonProperty(value = "ltKey")
+	@NotNull
+	@Valid
+	private LoadTestKey loadTestKey;
+	
 	@JsonProperty(value = "hn")
 	@NotNull
 	private String hostname;
@@ -103,6 +109,14 @@ public class Sample {
 
 	public void setKey(String key) {
 		this.key = key;
+	}
+
+	public LoadTestKey getLoadTestKey() {
+		return loadTestKey;
+	}
+
+	public void setLoadTestKey(LoadTestKey loadTestKey) {
+		this.loadTestKey = loadTestKey;
 	}
 
 	public String getHostname() {

@@ -3,6 +3,7 @@ package org.jmeter.reporting.rest;
 import java.util.List;
 
 import javax.inject.Named;
+import javax.validation.Valid;
 
 import org.jmeter.reporting.domain.Sample;
 import org.jongo.Find;
