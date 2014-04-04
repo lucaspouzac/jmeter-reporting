@@ -1,44 +1,65 @@
 package org.jmeter.reporting.rest;
 
-import java.util.Date;
 import java.util.List;
+
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.jmeter.reporting.domain.LoadTest;
 import org.jmeter.reporting.domain.LoadTestKey;
 import org.jmeter.reporting.domain.Sample;
+import org.jmeter.reporting.service.LoadTestService;
 import org.jongo.Find;
-
-import com.google.common.base.Optional;
+import org.jongo.FindOne;
 
 import restx.annotations.GET;
 import restx.annotations.POST;
 import restx.annotations.RestxResource;
 import restx.factory.Component;
+import restx.jongo.JongoCollection;
 import restx.security.PermitAll;
+
+import com.google.common.base.Optional;
 
 @Component
 @RestxResource
 @PermitAll
 public class LoadTestResource {
 
-    @GET("/load_test")
+    private final LoadTestService loadTestService;
+
+    @Inject
+    public LoadTestResource(LoadTestService loadTestService) {
+        this.loadTestService = loadTestService;
+    }
+
+    @GET("/load_tests")
     public Iterable<LoadTest> findLoadTests(Optional<Integer> skip, Optional<Integer> limit) {
-        return null;
+        return loadTestService.find(skip, limit);
     }
 
-    @GET("/load_test/{name}/{version}/{date}")
-    public Optional<LoadTest> findLoadTestByKey(String name, String version, Date date) {
-        return null;
+    @GET("/load_tests/{name}/{version}/{run}")
+    public Optional<LoadTest> findLoadTestByKey(String name, String version, Integer run) {
+        return loadTestService.findByKey(name, version, run);
     }
 
-    @POST("/load_test/start")
-    public LoadTest start(LoadTestKey loadTestKey) {
-        return null;
+    @POST("/start/{name}/{version}")
+    public LoadTest start(String name, String version) {
+        int run = 1;
+
+        // Get last run number
+        Optional<LoadTest> ldTest = loadTestService.findLastByNameAndVersion(name, version);
+        if (ldTest.isPresent()) {
+            run = ldTest.get().getLoadTestKey().getRun() + 1;
+        }
+
+        // Create and save
+        return loadTestService.createNew(name, version, run);
     }
 
 
-    @POST("/load_test/stop")
-    public LoadTest stop(LoadTestKey loadTestKey) {
+    @POST("/stop/{name}/{version}/{run}")
+    public LoadTest stop(String name, String version, Integer run) {
         return null;
     }
 

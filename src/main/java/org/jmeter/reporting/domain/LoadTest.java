@@ -23,4 +23,36 @@ public class LoadTest {
 
     private boolean reference;
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String pKey) {
+        key = pKey;
+    }
+
+    public LoadTestKey getLoadTestKey() {
+        return loadTestKey;
+    }
+
+    public void setLoadTestKey(LoadTestKey pLoadTestKey) {
+        loadTestKey = pLoadTestKey;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int pStatus) {
+        status = pStatus;
+    }
+
+    public boolean isReference() {
+        return reference;
+    }
+
+    public void setReference(boolean pReference) {
+        reference = pReference;
+    }
+
 }

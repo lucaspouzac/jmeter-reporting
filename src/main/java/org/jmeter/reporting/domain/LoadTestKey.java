@@ -1,47 +1,45 @@
 package org.jmeter.reporting.domain;
 
-import java.util.Date;
-
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class LoadTestKey {
 
-	@JsonProperty(value = "name")
-	@NotNull
-	private String name;
+    @JsonProperty(value = "name")
+    @NotNull
+    private String name;
 
-	@JsonProperty(value = "version")
-	@NotNull
-	private String version;
+    @JsonProperty(value = "version")
+    @NotNull
+    private String version;
 
-	@JsonProperty(value = "date")
-	@NotNull
-	private Date date;
+    @JsonProperty(value = "run")
+    @NotNull
+    private Integer run;
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getVersion() {
-		return version;
-	}
+    public String getVersion() {
+        return version;
+    }
 
-	public void setVersion(String version) {
-		this.version = version;
-	}
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-	public Date getDate() {
-		return date;
-	}
+    public Integer getRun() {
+        return run;
+    }
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+    public void setRun(Integer pRun) {
+        run = pRun;
+    }
 
 }
