@@ -1,18 +1,12 @@
 package org.jmeter.reporting.rest;
 
-import java.util.List;
-
-import javax.inject.Named;
-import javax.validation.Valid;
-
 import org.jmeter.reporting.domain.Sample;
-import org.jongo.Find;
+import org.jmeter.reporting.service.SampleService;
 
 import restx.annotations.GET;
 import restx.annotations.POST;
 import restx.annotations.RestxResource;
 import restx.factory.Component;
-import restx.jongo.JongoCollection;
 import restx.security.PermitAll;
 
 import com.google.common.base.Optional;
@@ -22,27 +16,21 @@ import com.google.common.base.Optional;
 @PermitAll
 public class SampleResource {
 
-	private final JongoCollection samples;
+	private final SampleService sampleService;
 
-	public SampleResource(@Named("samples") JongoCollection samples) {
-		this.samples = samples;
+	public SampleResource(SampleService sampleService) {
+		this.sampleService = sampleService;
 	}
 
 	@GET("/samples")
-	public Iterable<Sample> findSamples(Optional<Integer> skip, Optional<Integer> limit) {
-		List<Object> paramaters = null;
-		String query = null;
-		
-		Find find = samples.get().find(query, paramaters);
-		
-		find.skip(skip.or(0)).limit(limit.or(10));
-		return find.as(Sample.class);
+	public Iterable<Sample> find(Optional<Integer> skip,
+			Optional<Integer> limit) {
+		return sampleService.find(skip, limit);
 	}
 
 	@POST("/samples")
-	public Sample createSample(Sample sample) {
-		samples.get().save(sample);
-		return sample;
+	public Sample save(Sample sample) {
+		return sampleService.save(sample);
 	}
 
 }

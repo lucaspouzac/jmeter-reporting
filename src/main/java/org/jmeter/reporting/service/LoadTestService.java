@@ -12,11 +12,13 @@ import org.jongo.FindOne;
 
 import com.google.common.base.Optional;
 
+import restx.factory.Component;
 import restx.jongo.JongoCollection;
 
 /**
  *
  */
+@Component
 public class LoadTestService {
 
     private final JongoCollection loadTests;

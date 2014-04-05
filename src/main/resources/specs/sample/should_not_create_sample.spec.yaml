@@ -14,13 +14,13 @@ wts:
   - when: |
           POST samples
   
-          { "ltKey": { "version": "1.2", "date": "2014-04-03"}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
+          { "ltKey": { "version": "1.2", "run": 1}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
     then: |
           400  
   - when: |
           POST samples
   
-          { "ltKey": { "name": "test_name", "date": "2014-04-03"}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
+          { "ltKey": { "name": "test_name", "run": 1}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
     then: |
           400  
   - when: |
@@ -32,55 +32,55 @@ wts:
   - when: |
           POST samples
   
-          { "ltKey": { "name": "test_name", "version": "1.2", "date": "2014-04-03"}, "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
+          { "ltKey": { "name": "test_name", "version": "1.2", "run": 1}, "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
     then: |
           400
   - when: |
           POST samples
 
-          { "ltKey": { "name": "test_name", "version": "1.2", "date": "2014-04-03"}, "hn": "hostname", "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
+          { "ltKey": { "name": "test_name", "version": "1.2", "run": 1}, "hn": "hostname", "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
     then: |
           400
   - when: |
           POST samples
 
-          { "ltKey": { "name": "test_name", "version": "1.2", "date": "2014-04-03"}, "hn": "hostname", "gt": 1, "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
+          { "ltKey": { "name": "test_name", "version": "1.2", "run": 1}, "hn": "hostname", "gt": 1, "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
     then: |
           400
   - when: |
           POST samples
 
-          { "ltKey": { "name": "test_name", "version": "1.2", "date": "2014-04-03"}, "hn": "hostname", "gt": 1, "rc": "200", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
+          { "ltKey": { "name": "test_name", "version": "1.2", "run": 1}, "hn": "hostname", "gt": 1, "rc": "200", "lb": "Sample label", "t": 1, "s": true, "by": 1, "lt": 1 }
     then: |
           400
   - when: |
           POST samples
 
-          { "ltKey": { "name": "test_name", "version": "1.2", "date": "2014-04-03"}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "t": 1, "s": true, "by": 1, "lt": 1 }
+          { "ltKey": { "name": "test_name", "version": "1.2", "run": 1}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "t": 1, "s": true, "by": 1, "lt": 1 }
     then: |
           400
   - when: |
           POST samples
 
-          { "ltKey": { "name": "test_name", "version": "1.2", "date": "2014-04-03"}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "s": true, "by": 1, "lt": 1 }
+          { "ltKey": { "name": "test_name", "version": "1.2", "run": 1}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "s": true, "by": 1, "lt": 1 }
     then: |
           400
   - when: |
           POST samples
 
-          { "ltKey": { "name": "test_name", "version": "1.2", "date": "2014-04-03"}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "by": 1, "lt": 1 }
+          { "ltKey": { "name": "test_name", "version": "1.2", "run": 1}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "by": 1, "lt": 1 }
     then: |
           400
   - when: |
           POST samples
 
-          { "ltKey": { "name": "test_name", "version": "1.2", "date": "2014-04-03"}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "lt": 1 }
+          { "ltKey": { "name": "test_name", "version": "1.2", "run": 1}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "lt": 1 }
     then: |
           400
   - when: |
           POST samples
 
-          { "ltKey": { "name": "test_name", "version": "1.2", "date": "2014-04-03"}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1 }
+          { "ltKey": { "name": "test_name", "version": "1.2", "run": 1}, "hn": "hostname", "gt": 1, "rc": "200", "tn": "Thread name", "lb": "Sample label", "t": 1, "s": true, "by": 1 }
     then: |
           400         
   - when: GET samples
