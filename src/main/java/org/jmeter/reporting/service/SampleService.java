@@ -4,14 +4,12 @@ import java.util.List;
 
 import javax.inject.Named;
 
-import org.jmeter.reporting.domain.Sample;
 import org.jmeter.reporting.domain.AggregateSample;
+import org.jmeter.reporting.domain.Sample;
 import org.jongo.Find;
 
 import restx.factory.Component;
 import restx.jongo.JongoCollection;
-
-import com.google.common.base.Optional;
 
 @Component
 public class SampleService {
@@ -33,31 +31,40 @@ public class SampleService {
 		return sample;
 	}
 
-	public List<AggregateSample> throughput(int interval) {
+	public List<AggregateSample> throughput(String name, String version,
+			int run, int interval) {
 		List<AggregateSample> aggregateSamples = samples.get()
-				.aggregate(createAggregateQuery("{ '$sum' : 1 }", interval))
+				.aggregate(createMatchAggregateQuery(name, version, run))
+				.and(createGroupAggregateQuery("{ '$sum' : 1 }", interval))
 				.as(AggregateSample.class);
 
 		return aggregateSamples;
 	}
 
-	public List<AggregateSample> threadCount(int interval) {
+	public List<AggregateSample> threadCount(String name, String version,
+			int run, int interval) {
 		List<AggregateSample> aggregateSamples = samples.get()
-				.aggregate(createAggregateQuery("{ '$avg' : '$ng' }", interval))
+				.aggregate(createMatchAggregateQuery(name, version, run))
+				.and(createGroupAggregateQuery("{ '$avg' : '$ng' }", interval))
 				.as(AggregateSample.class);
 
 		return aggregateSamples;
 	}
 
-	private String createAggregateQuery(String valueQuery, int interval) {
-		return "{'$group' : {'_id' : { '$multiply' : [ { '$subtract' : [ {'$divide' : ['$ts', "
-				+ interval
-				+ " ]}, { '$mod' : [{'$divide' : ['$ts', "
-				+ interval
-				+ " ]},1] } ] } , "
-				+ interval
-				+ "] }, 'value' : "
-				+ valueQuery
-				+ " }}";
+	private String createMatchAggregateQuery(String name, String version,
+			int run) {
+		return new StringBuilder("{$match:{'ltKey': { 'name': '").append(name)
+				.append("', 'version': '").append(version).append("', 'run': ")
+				.append(run).append(" }}}").toString();
+	}
+
+	private String createGroupAggregateQuery(String valueQuery, int interval) {
+		return new StringBuilder(
+				"{'$group' : {'_id' : { '$multiply' : [ { '$subtract' : [ {'$divide' : ['$ts', ")
+				.append(interval)
+				.append(" ]}, { '$mod' : [{'$divide' : ['$ts', ")
+				.append(interval).append(" ]},1] } ] } , ").append(interval)
+				.append("] }, 'value' : ").append(valueQuery).append(" }}")
+				.toString();
 	}
 }

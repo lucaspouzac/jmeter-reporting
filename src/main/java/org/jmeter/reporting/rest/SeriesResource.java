@@ -1,9 +1,7 @@
 package org.jmeter.reporting.rest;
 
 import java.util.List;
-import java.util.SortedMap;
 import java.util.SortedSet;
-import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.jmeter.reporting.domain.AggregateSample;
@@ -37,13 +35,15 @@ public class SeriesResource {
 	@GET("/throughput/{name}/{version}/{run}")
 	public SortedSet<AggregateSample> throughput(String name, String version,
 			int run, Optional<Integer> interval) {
-		return convert(sampleService.throughput(interval.or(DEFAULT_INTERVAL)));
+		return convert(sampleService.throughput(name, version, run,
+				interval.or(DEFAULT_INTERVAL)));
 	}
 
 	@GET("/thread_count/{name}/{version}/{run}")
 	public SortedSet<AggregateSample> threadCount(String name, String version,
 			int run, Optional<Integer> interval) {
-		return convert(sampleService.threadCount(interval.or(DEFAULT_INTERVAL)));
+		return convert(sampleService.threadCount(name, version, run,
+				interval.or(DEFAULT_INTERVAL)));
 	}
 
 	private SortedSet<AggregateSample> convert(List<AggregateSample> aggs) {
