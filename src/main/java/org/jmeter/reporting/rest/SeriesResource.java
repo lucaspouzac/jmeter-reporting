@@ -2,7 +2,9 @@ package org.jmeter.reporting.rest;
 
 import java.util.List;
 import java.util.SortedMap;
+import java.util.SortedSet;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 import org.jmeter.reporting.domain.AggregateSample;
 import org.jmeter.reporting.service.LoadTestService;
@@ -33,22 +35,19 @@ public class SeriesResource {
 	}
 
 	@GET("/throughput/{name}/{version}/{run}")
-	public SortedMap<Long, Integer> throughput(String name, String version,
+	public SortedSet<AggregateSample> throughput(String name, String version,
 			int run, Optional<Integer> interval) {
 		return convert(sampleService.throughput(interval.or(DEFAULT_INTERVAL)));
 	}
 
 	@GET("/thread_count/{name}/{version}/{run}")
-	public SortedMap<Long, Integer> threadCount(String name, String version,
+	public SortedSet<AggregateSample> threadCount(String name, String version,
 			int run, Optional<Integer> interval) {
 		return convert(sampleService.threadCount(interval.or(DEFAULT_INTERVAL)));
 	}
 
-	private SortedMap<Long, Integer> convert(List<AggregateSample> aggs) {
-		SortedMap<Long, Integer> result = new TreeMap<>();
-		for (AggregateSample agg : aggs) {
-			result.put(agg.getTimestamp(), agg.getValue());
-		}
+	private SortedSet<AggregateSample> convert(List<AggregateSample> aggs) {
+		SortedSet<AggregateSample> result = new TreeSet<>(aggs);
 		return result;
 	}
 
