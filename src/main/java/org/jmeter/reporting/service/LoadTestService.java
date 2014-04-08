@@ -27,9 +27,9 @@ public class LoadTestService {
         this.loadTests = loadTests;
     }
 
-    public Iterable<LoadTest> find(Optional<Integer> skip, Optional<Integer> limit) {
+    public Iterable<LoadTest> find(int skip, int limit) {
         Find find = loadTests.get().find();
-        find.skip(skip.or(0)).limit(limit.or(10));
+        find.skip(skip).limit(limit);
         return find.as(LoadTest.class);
     }
 

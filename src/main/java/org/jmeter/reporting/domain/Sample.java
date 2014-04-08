@@ -18,7 +18,7 @@ public class Sample {
 	@NotNull
 	@Valid
 	private LoadTestKey loadTestKey;
-	
+
 	@JsonProperty(value = "hn")
 	@NotNull
 	private String hostname;
@@ -102,6 +102,12 @@ public class Sample {
 
 	@JsonProperty(value = "bs")
 	private Integer bodySize;
+
+	@JsonProperty(value = "na")
+	private Integer activeThreadsAllGroups;
+
+	@JsonProperty(value = "ng")
+	private Integer activeThreadsGroup;
 
 	public String getKey() {
 		return key;
@@ -317,6 +323,22 @@ public class Sample {
 
 	public void setBodySize(Integer bodySize) {
 		this.bodySize = bodySize;
+	}
+
+	public Integer getActiveThreadsAllGroups() {
+		return activeThreadsAllGroups;
+	}
+
+	public void setActiveThreadsAllGroups(Integer activeThreadsAllGroups) {
+		this.activeThreadsAllGroups = activeThreadsAllGroups;
+	}
+
+	public Integer getActiveThreadsGroup() {
+		return activeThreadsGroup;
+	}
+
+	public void setActiveThreadsGroup(Integer activeThreadsGroup) {
+		this.activeThreadsGroup = activeThreadsGroup;
 	}
 
 }

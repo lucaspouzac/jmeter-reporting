@@ -23,9 +23,8 @@ public class SampleResource {
 	}
 
 	@GET("/samples")
-	public Iterable<Sample> find(Optional<Integer> skip,
-			Optional<Integer> limit) {
-		return sampleService.find(skip, limit);
+	public Iterable<Sample> find(Optional<Integer> skip, Optional<Integer> limit) {
+		return sampleService.find(skip.or(0), limit.or(10));
 	}
 
 	@POST("/samples")

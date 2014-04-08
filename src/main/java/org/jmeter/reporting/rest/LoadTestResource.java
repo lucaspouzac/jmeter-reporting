@@ -24,12 +24,12 @@ public class LoadTestResource {
 	@GET("/load_tests")
 	public Iterable<LoadTest> find(Optional<Integer> skip,
 			Optional<Integer> limit) {
-		return loadTestService.find(skip, limit);
+		return loadTestService.find(skip.or(0), limit.or(10));
 	}
 
 	@GET("/load_tests/{name}/{version}/{run}")
 	public Optional<LoadTest> findByKey(String name, String version,
-			Integer run) {
+			int run) {
 		return loadTestService.findByKey(name, version, run);
 	}
 
