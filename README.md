@@ -1,4 +1,4 @@
-JMeter-Reporting [![Build Status](https://buildhive.cloudbees.com/job/lucaspouzac/job/jmeter-reporting/badge/icon)](https://buildhive.cloudbees.com/job/lucaspouzac/job/jmeter-reporting/)
+JMeter-Reporting [![Build Status](https://lucaspouzac.ci.cloudbees.com/buildStatus/icon?job=jmeter-reporting)](https://lucaspouzac.ci.cloudbees.com/job/jmeter-reporting/)
 ================
 
 In development
