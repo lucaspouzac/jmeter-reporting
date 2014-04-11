@@ -27,6 +27,10 @@ public class Sample {
 	@NotNull
 	private Integer groupThreads;
 
+	@JsonProperty(value = "ts")
+	@NotNull
+	private String timestamp;
+
 	@JsonProperty(value = "rc")
 	@NotNull
 	private String responseCode;
@@ -141,6 +145,14 @@ public class Sample {
 		this.groupThreads = groupThreads;
 	}
 
+	public String getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(String timestamp) {
+		this.timestamp = timestamp;
+	}
+
 	public String getResponseCode() {
 		return responseCode;
 	}
@@ -201,7 +213,7 @@ public class Sample {
 		return elapsedTime;
 	}
 
-	public void setTime(Integer elapsedTime) {
+	public void setElapsedTime(Integer elapsedTime) {
 		this.elapsedTime = elapsedTime;
 	}
 
