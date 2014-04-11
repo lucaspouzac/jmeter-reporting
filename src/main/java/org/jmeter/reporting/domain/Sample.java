@@ -29,7 +29,7 @@ public class Sample {
 
 	@JsonProperty(value = "ts")
 	@NotNull
-	private String timestamp;
+	private Long timestamp;
 
 	@JsonProperty(value = "rc")
 	@NotNull
@@ -145,11 +145,11 @@ public class Sample {
 		this.groupThreads = groupThreads;
 	}
 
-	public String getTimestamp() {
+	public Long getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(String timestamp) {
+	public void setTimestamp(Long timestamp) {
 		this.timestamp = timestamp;
 	}
 
