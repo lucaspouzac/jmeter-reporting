@@ -7,9 +7,9 @@ In development
 
 ## Demo
 
-Admin console (admin/admin): 
+[JMETER REPORTING](http://jmeter-reporting.lucaspouzac.eu.cloudbees.net/)
 
-`http://jmeter-reporting.lucaspouzac.eu.cloudbees.net/api/@/ui/`
+[ADMIN RESTX CONSOLE](http://jmeter-reporting.lucaspouzac.eu.cloudbees.net/api/@/ui/): `admin/admin` 
 
 ## Installation
 
@@ -29,9 +29,7 @@ JMETER-REPORTING requires Java 7.
 
 You can build it using either Maven 3.
 
-With Maven:
-
-`mvn clean install test` (add -Dhttp.proxyHost=host -Dhttp.proxyPort=port if you are behind a proxy to download embed MongoDB)
+With Maven: `mvn clean install test` (add -Dhttp.proxyHost=host -Dhttp.proxyPort=port if you are behind a proxy to download embed MongoDB)
 
 ### Contributing
 
