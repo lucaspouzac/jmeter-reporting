@@ -1,0 +1,35 @@
+body {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.bs-footer {
+	text-align: center;	
+}
+
+.footer-links {
+	margin: 10px 0;
+	padding-left: 0;
+}
+.footer-links li {
+	display: inline;
+	padding: 0 2px;
+}
+.footer-links li:first-child {
+	padding-left: 0;
+}
+
+.footer-links > li > a {
+  color: #777777;
+}
+
+.footer-links > li > a:hover,
+.footer-links > li > a:focus {
+  color: #333333;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+} 
