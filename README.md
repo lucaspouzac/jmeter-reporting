@@ -1,10 +1,6 @@
 JMeter-Reporting [![Build Status](https://lucaspouzac.ci.cloudbees.com/buildStatus/icon?job=jmeter-reporting)](https://lucaspouzac.ci.cloudbees.com/job/jmeter-reporting/)
 ================
 
-[![Built on](http://www.cloudbees.com/sites/default/files/Button-Built-on-CB-1.png)](https://console.cloudbees.com/a/lucaspouzac/home/)
-
-In development
-
 ## Demo
 
 [JMETER REPORTING](http://jmeter-reporting.lucaspouzac.eu.cloudbees.net/)
@@ -19,7 +15,9 @@ Default local MongoDB installation (port 27017) or add `-Dmongo.uri=[mongodb://l
 
 ### Run Application
 
-Run As Java Application `org.jmeter.reporting.AppServer` (use embed jetty) or deploy war on application server.
+JMETER REPORTING is a RestX application. 2 ways to run application : 
+ - Run As Java Application `org.jmeter.reporting.AppServer` (use embed jetty)
+ - Deploy war on application server.
 
 ## Development
 
@@ -34,3 +32,5 @@ With Maven: `mvn clean install test` (add -Dhttp.proxyHost=host -Dhttp.proxyPort
 ### Contributing
 
 Contributions are welcome, fork the repo, push your changes to a branch and send a Pull Request.
+
+[![Built on](http://www.cloudbees.com/sites/default/files/Button-Built-on-CB-1.png)](https://console.cloudbees.com/a/lucaspouzac/home/)
