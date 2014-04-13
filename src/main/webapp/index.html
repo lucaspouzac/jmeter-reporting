@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html ng-app="jmeterReportingApp">
 	<head>
 		<title>JMETER REPORTING</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -31,9 +30,8 @@
 		</div>
 		</nav>
 		
-		<div class="container">
-	
-		</div>
+		<!-- partie principale -->
+		<div ng-view></div>
 	
 		<footer class="bs-footer navbar navbar-default navbar-fixed-bottom" role="contentinfo">
 			<div class="container">
@@ -53,6 +51,7 @@
 		
 		<!-- angularjs -->
 		<script type="text/javascript" src="static/libs/angular-1.2.16/angular.min.js"></script>
+		<script type="text/javascript" src="static/libs/angular-1.2.16/angular-route.min.js"></script>
 		<script type="text/javascript" src="static/libs/angular-1.2.16/angular-resource.min.js"></script>
 		
 		<!-- jquery -->
@@ -63,5 +62,9 @@
 		
 		<!-- highcharts -->
 		<script type="text/javascript" src="static/libs/highcharts-3.0.10/highcharts.js"></script>
+		
+		<!-- app -->
+		<script type="text/javascript" src="static/js/app.js"></script>
+		<script type="text/javascript" src="static/js/controllers.js"></script>
 	</body>
 </html>
