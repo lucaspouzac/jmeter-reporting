@@ -33,10 +33,18 @@ public class LoadTestResource {
 		return loadTestService.findName(skip.or(0), limit.or(10));
 	}
 
-	
+	@GET("/load_tests/find_last_ref/{name}")
+	public Optional<LoadTest> findLastRef(String name) {
+		return Optional.fromNullable(loadTestService.findLastRefByName(name));
+	}
+
+	@GET("/load_tests/find_last/{name}")
+	public Optional<LoadTest> findLast(String name) {
+		return Optional.fromNullable(loadTestService.findLastByName(name));
+	}
+
 	@GET("/load_tests/{name}/{version}/{run}")
-	public Optional<LoadTest> findByKey(String name, String version,
-			int run) {
+	public Optional<LoadTest> findByKey(String name, String version, int run) {
 		return loadTestService.findByKey(name, version, run);
 	}
 
