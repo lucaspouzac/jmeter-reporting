@@ -7,6 +7,7 @@ import javax.inject.Named;
 
 import org.jmeter.reporting.domain.LoadTest;
 import org.jmeter.reporting.domain.LoadTestKey;
+import org.jongo.Distinct;
 import org.jongo.Find;
 import org.jongo.FindOne;
 
@@ -36,6 +37,11 @@ public class LoadTestService {
     public Optional<LoadTest> findByKey(String name, String version, Integer run) {
         FindOne find = loadTests.get().findOne("{name: #, version: #, run: #}", name, version, run);
         return Optional.fromNullable(find.as(LoadTest.class));
+    }
+
+    public Iterable<String> findName(int skip, int limit) {
+        Distinct distinct = loadTests.get().distinct("ltKey.name");
+        return distinct.as(String.class);
     }
 
     public Optional<LoadTest> findLastByNameAndVersion(String name, String version) {

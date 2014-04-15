@@ -19,8 +19,11 @@ public class LoadTest {
     @Valid
     private LoadTestKey loadTestKey;
 
+
+    @JsonProperty(value = "st")
     private int status;
 
+    @JsonProperty(value = "ref")
     private boolean reference;
 
     public String getKey() {

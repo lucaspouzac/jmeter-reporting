@@ -27,6 +27,13 @@ public class LoadTestResource {
 		return loadTestService.find(skip.or(0), limit.or(10));
 	}
 
+	@GET("/load_tests/name")
+	public Iterable<String> findName(Optional<Integer> skip,
+			Optional<Integer> limit) {
+		return loadTestService.findName(skip.or(0), limit.or(10));
+	}
+
+	
 	@GET("/load_tests/{name}/{version}/{run}")
 	public Optional<LoadTest> findByKey(String name, String version,
 			int run) {

@@ -1,0 +1,25 @@
+title: "should find name loadtests2"
+given:
+  - time: 2014-04-14T09:28:00Z
+  - collection: load_tests
+    data: |
+          { "_id": { "$oid" : "5167cec5856107c479739654"}, "ltKey": { "name": "api-geo", "version": "1.0-SNAPSHOT", "run": 1}, "st": 1, "ref": false}
+          { "_id": { "$oid" : "5167cec5856107c479739655"}, "ltKey": { "name": "api-geo", "version": "1.0-SNAPSHOT", "run": 2}, "st": 1, "ref": false}
+          { "_id": { "$oid" : "5167cec5856107c479739656"}, "ltKey": { "name": "api-geo", "version": "1.0-SNAPSHOT", "run": 3}, "st": 1, "ref": false}
+          { "_id": { "$oid" : "5167cec5856107c479739657"}, "ltKey": { "name": "api-geo", "version": "1.0", "run": 1}, "st": 1, "ref": false}
+          { "_id": { "$oid" : "5167cec5856107c479739658"}, "ltKey": { "name": "api-geo", "version": "1.0", "run": 2}, "st": 1, "ref": true}
+          { "_id": { "$oid" : "5167cec5856107c479739659"}, "ltKey": { "name": "api-geo", "version": "1.1-SNAPSHOT", "run": 1}, "st": 1, "ref": false}
+          { "_id": { "$oid" : "5167cec5856107c479739660"}, "ltKey": { "name": "api-geo", "version": "1.1-SNAPSHOT", "run": 2}, "st": 1, "ref": false}
+          { "_id": { "$oid" : "5167cec5856107c479739661"}, "ltKey": { "name": "api-geo", "version": "1.1", "run": 1}, "st": 1, "ref": true}
+          { "_id": { "$oid" : "5167cec5856107c479739662"}, "ltKey": { "name": "api-map", "version": "1.0", "run": 1}, "st": 1, "ref": false}
+          { "_id": { "$oid" : "5167cec5856107c479739663"}, "ltKey": { "name": "api-map", "version": "1.1", "run": 1}, "st": 1, "ref": false}
+          { "_id": { "$oid" : "5167cec5856107c479739664"}, "ltKey": { "name": "api-word", "version": "1.0", "run": 1}, "st": 1, "ref": true}
+          { "_id": { "$oid" : "5167cec5856107c479739665"}, "ltKey": { "name": "api-day", "version": "1.0", "run": 1}, "st": 1, "ref": true}
+          { "_id": { "$oid" : "5167cec5856107c479739666"}, "ltKey": { "name": "api-day", "version": "1.1", "run": 1}, "st": 1, "ref": false}
+          { "_id": { "$oid" : "5167cec5856107c479739667"}, "ltKey": { "name": "api-day", "version": "1.1", "run": 2}, "st": 1, "ref": true}
+          { "_id": { "$oid" : "5167cec5856107c479739668"}, "ltKey": { "name": "api-day", "version": "1.1", "run": 3}, "st": 1, "ref": false}
+wts:
+  - when: GET load_tests/name
+    then: |
+        [ "api-geo", "api-map", "api-word", "api-day" ]
+ 
