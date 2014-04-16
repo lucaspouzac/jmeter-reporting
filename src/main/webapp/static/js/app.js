@@ -1,12 +1,12 @@
 'use strict';
 
 /* App Module */
-var jmeterReporting = angular.module('jmeterReportingApp', [
+var jmeterReportingApp = angular.module('jmeterReportingApp', [
 	'ngRoute',
 	'jmeterReportingControllers'
 ]);
 
-jmeterReporting.config(['$routeProvider', function($routeProvider) {
+jmeterReportingApp.config(['$routeProvider', function($routeProvider) {
         $routeProvider
         	// home
 	        .when('/home', {
