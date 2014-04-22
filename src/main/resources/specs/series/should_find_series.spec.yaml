@@ -2546,7 +2546,7 @@ given:
           { "ltKey": { "name": "test_name", "version": "1.2", "run": 2 }, "t": 2, "lt": 2, "ts": 1396958073902, "s": true, "lb": "Requête 2", "rc": "200", "rm": "OK", "tn": "Groupe d&apos;unités 1-7", "dt": "text", "by": 483, "ng": 2, "na": 2 },
           { "ltKey": { "name": "test_name", "version": "1.2", "run": 2 }, "t": 2, "lt": 2, "ts": 1396958074197, "s": true, "lb": "Requête 1", "rc": "200", "rm": "OK", "tn": "Groupe d&apos;unités 1-1", "dt": "text", "by": 483, "ng": 1, "na": 1 }          
 wts:
-  - when: GET throughput/test_name/1.2/1
+  - when: GET series/throughput/test_name/1.2/1
     then: |
         [ 
           { "_id" : 1396764122000, "value" : 2},
@@ -2719,7 +2719,7 @@ wts:
           { "_id" : 1396764348000, "value" : 4},
           { "_id" : 1396764349000, "value" : 4} 
         ]
-  - when: GET thread_count/test_name/1.2/1
+  - when: GET series/thread_count/test_name/1.2/1
     then: |
         [ 
           { "_id" : 1396764122000, "value" : 2 },

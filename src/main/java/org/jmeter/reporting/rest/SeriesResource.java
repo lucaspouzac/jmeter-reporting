@@ -32,14 +32,14 @@ public class SeriesResource {
 		this.sampleService = sampleService;
 	}
 
-	@GET("/throughput/{name}/{version}/{run}")
+	@GET("/series/throughput/{name}/{version}/{run}")
 	public SortedSet<AggregateSample> throughput(String name, String version,
 			int run, Optional<Integer> interval) {
 		return convert(sampleService.throughput(name, version, run,
 				interval.or(DEFAULT_INTERVAL)));
 	}
 
-	@GET("/thread_count/{name}/{version}/{run}")
+	@GET("/series/thread_count/{name}/{version}/{run}")
 	public SortedSet<AggregateSample> threadCount(String name, String version,
 			int run, Optional<Integer> interval) {
 		return convert(sampleService.threadCount(name, version, run,

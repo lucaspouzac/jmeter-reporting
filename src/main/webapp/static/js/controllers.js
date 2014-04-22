@@ -24,3 +24,15 @@ jmeterReportingControllers.controller("HomeCtrl" ,function ($scope, LoadTest) {
         
     });    
 });
+
+//LoadTest Controller
+jmeterReportingControllers.controller("LoadTestCtrl" ,function ($scope, $routeParams, Series, Chart) {
+	Series.throughput($routeParams.name, $routeParams.version, $routeParams.run).success(function(throughputSeries){
+		Chart.draw('throughput', throughputSeries, 'Throughput');
+    });
+
+	Series.thread_count($routeParams.name, $routeParams.version, $routeParams.run).success(function(threadCountSeries){
+		Chart.draw('thread_count', threadCountSeries, 'Thread Count');
+    });
+	
+});
