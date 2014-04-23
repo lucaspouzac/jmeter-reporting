@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.inject.Named;
 
-import org.jmeter.reporting.domain.AggregateSample;
 import org.jmeter.reporting.domain.Sample;
+import org.jmeter.reporting.domain.aggregate.AggregateHttpCode;
+import org.jmeter.reporting.domain.aggregate.AggregateSampler;
+import org.jmeter.reporting.domain.aggregate.AggregateTimestamp;
 import org.jongo.Find;
 
 import restx.factory.Component;
@@ -31,22 +33,41 @@ public class SampleService {
 		return sample;
 	}
 
-	public List<AggregateSample> throughput(String name, String version,
-			int run, int interval) {
-		List<AggregateSample> aggregateSamples = samples.get()
+	public List<AggregateTimestamp> aggregateByTimestamp(String name,
+			String version, int run, int interval) {
+		List<AggregateTimestamp> aggregateSamples = samples
+				.get()
 				.aggregate(createMatchAggregateQuery(name, version, run))
-				.and(createGroupAggregateQuery("{ '$sum' : 1 }", interval))
-				.as(AggregateSample.class);
+				.and(new StringBuilder(
+						"{'$group' : {'_id' : { '$multiply' : [ { '$subtract' : [ {'$divide' : ['$ts', ")
+						.append(interval)
+						.append(" ]}, { '$mod' : [{'$divide' : ['$ts', ")
+						.append(interval)
+						.append(" ]},1] } ] } , ")
+						.append(interval)
+						.append("] }, 'throughput_success' : { '$sum' : { '$cond' : [ '$s', 1, 0 ] } }, 'throughput_error' : { '$sum' : { '$cond' : [ '$s', 0, 1 ] } }, 'thread_count' :  { '$avg' : '$ng' } }}")
+						.toString()).as(AggregateTimestamp.class);
 
 		return aggregateSamples;
 	}
 
-	public List<AggregateSample> threadCount(String name, String version,
-			int run, int interval) {
-		List<AggregateSample> aggregateSamples = samples.get()
+	public List<AggregateHttpCode> aggregateByHttpCode(String name,
+			String version, int run) {
+		List<AggregateHttpCode> aggregateSamples = samples.get()
 				.aggregate(createMatchAggregateQuery(name, version, run))
-				.and(createGroupAggregateQuery("{ '$avg' : '$ng' }", interval))
-				.as(AggregateSample.class);
+				.and("{'$group' : {'_id' : '$rc', 'count' : { '$sum' : 1 } }}")
+				.as(AggregateHttpCode.class);
+
+		return aggregateSamples;
+	}
+
+	public List<AggregateSampler> aggregateBySampler(String name,
+			String version, int run) {
+		List<AggregateSampler> aggregateSamples = samples
+				.get()
+				.aggregate(createMatchAggregateQuery(name, version, run))
+				.and("{'$group' : {'_id' : '$lb' , 'iterations' : { '$sum' : 1 }, 'avg_time' : { '$avg' : '$t' }, 'avg_byt' : { '$avg' : '$by' }, 'success' : { '$sum' : { '$cond' : [ '$s', 1, 0 ] } } }}")
+				.as(AggregateSampler.class);
 
 		return aggregateSamples;
 	}
@@ -58,13 +79,4 @@ public class SampleService {
 				.append(run).append(" }}}").toString();
 	}
 
-	private String createGroupAggregateQuery(String valueQuery, int interval) {
-		return new StringBuilder(
-				"{'$group' : {'_id' : { '$multiply' : [ { '$subtract' : [ {'$divide' : ['$ts', ")
-				.append(interval)
-				.append(" ]}, { '$mod' : [{'$divide' : ['$ts', ")
-				.append(interval).append(" ]},1] } ] } , ").append(interval)
-				.append("] }, 'value' : ").append(valueQuery).append(" }}")
-				.toString();
-	}
 }

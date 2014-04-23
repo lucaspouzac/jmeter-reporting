@@ -27,12 +27,34 @@ jmeterReportingControllers.controller("HomeCtrl" ,function ($scope, LoadTest) {
 
 //LoadTest Controller
 jmeterReportingControllers.controller("LoadTestCtrl" ,function ($scope, $routeParams, Series, Chart) {
-	Series.throughput($routeParams.name, $routeParams.version, $routeParams.run).success(function(throughputSeries){
-		Chart.draw('throughput', throughputSeries, 'Throughput');
+	$scope.path = {
+		name: $routeParams.name,
+		version: $routeParams.version,
+		run: $routeParams.run
+	}
+	
+	Series.aggregate_by_sampler($routeParams.name, $routeParams.version, $routeParams.run).success(function(series){
+		$scope.samplers = series;
     });
-
-	Series.thread_count($routeParams.name, $routeParams.version, $routeParams.run).success(function(threadCountSeries){
-		Chart.draw('thread_count', threadCountSeries, 'Thread Count');
+	
+	Series.aggregate_by_timestamp($routeParams.name, $routeParams.version, $routeParams.run).success(function(series){
+		Chart.draw('throughput', series, 'timestamp', ['throughput_success', 'throughput_error'], ['Throughput Success', 'Throughput Error'], ['green','red']);
+		Chart.draw('thread_count', series, 'timestamp', ['thread_count'], ['Thread Count'], []);
     });
+	
+	Series.aggregate_by_httpcode($routeParams.name, $routeParams.version, $routeParams.run).success(function(series){
+		for (var i=0; i<series.length; i++) {
+			if (series[i].label.length == 3) {
+				series[i].label = "HTTP " + series[i].label;
+			} else {
+				series[i].label = "Timeout";
+			}
+		}
+		Morris.Donut({
+			  element: 'httpcode',
+			  data: series
+		});
+    });
+	
 	
 });

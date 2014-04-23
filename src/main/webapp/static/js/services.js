@@ -21,36 +21,53 @@ jmeterReportingApp.factory("LoadTest", function ($http) {
 
 });
 
-jmeterReportingApp.factory("Series", function ($http) {
+jmeterReportingApp.factory("Series", [ '$http', function (async) {
     var API_URI = '/api/series';
 
     return {
 
-        throughput : function(name, version, run) {
-            return $http.get(API_URI + '/throughput/' + name + '/' + version + '/' + run);
+        aggregate_by_timestamp : function(name, version, run) {
+            return async({
+            	method: 'GET',
+            	url: API_URI + '/aggregate_by_timestamp/' + name + '/' + version + '/' + run
+            });
         },
 
-	    thread_count : function(name, version, run) {
-	        return $http.get(API_URI + '/thread_count/' + name + '/' + version + '/' + run);
+        aggregate_by_httpcode : function(name, version, run) {
+            return async({
+            	method: 'GET',
+            	url: API_URI + '/aggregate_by_httpcode/' + name + '/' + version + '/' + run
+            });
+	    },
+
+        aggregate_by_sampler : function(name, version, run) {
+            return async({
+            	method: 'GET',
+            	url: API_URI + '/aggregate_by_sampler/' + name + '/' + version + '/' + run
+            });
 	    }
         
     };
 
-});
+}]);
 
 
 jmeterReportingApp.factory("Chart", function () {
     return {
-        draw : function(name, data, label) {
-    		Morris.Line({
+        draw : function(name, data, xKey, yKeys, label, lineColors) {
+        	if (lineColors.length == 0) {
+        		lineColors = Morris.Line.prototype.defaults.lineColors;
+        	}
+        	Morris.Line({
     			  element: name,
     			  data: data,
-    			  xkey: '_id',
-    			  ykeys: ['value'],
-    			  labels: [label],
-    			  pointSize: 2,
+    			  xkey: xKey,
+    			  ykeys: yKeys,
+    			  labels: label,
+    			  pointSize: 0,
     			  lineWidth: 2,
-    			  smooth: true
+    			  smooth: true,
+    			  lineColors : lineColors//#0b62a4
     			});
         }        
     };
