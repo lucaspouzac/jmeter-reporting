@@ -33,14 +33,21 @@ jmeterReportingControllers.controller("LoadTestCtrl" ,function ($scope, $routePa
 		run: $routeParams.run
 	}
 	
-	Series.aggregate_by_sampler($routeParams.name, $routeParams.version, $routeParams.run).success(function(series){
+	Series.aggregate_by_sampler($routeParams.name, $routeParams.version, $routeParams.run, false).success(function(series){
 		$scope.samplers = series;
     });
 	
-	Series.aggregate_by_timestamp($routeParams.name, $routeParams.version, $routeParams.run).success(function(series){
-		Chart.draw('throughput', series, 'timestamp', ['throughput_success', 'throughput_error'], ['Throughput Success', 'Throughput Error'], ['green','red']);
-		Chart.draw('thread_count', series, 'timestamp', ['thread_count'], ['Thread Count'], []);
+	Series.aggregate_by_sampler($routeParams.name, $routeParams.version, $routeParams.run, true).success(function(series){
+		series.forEach(function(entry) {
+	    	Chart.draw(entry.label, entry.aggs_timestamp, 'timestamp', ['avg_times_success', 'avg_times_error'], ['Average Times Success', 'Average Times Error'], ['green','red']);
+	    });
     });
+	
+	Series.aggregate_by_timestamp($routeParams.name, $routeParams.version, $routeParams.run).success(function(series){
+		$scope.global = series;
+		Chart.draw('throughput', series.aggs_timestamp, 'timestamp', ['throughput_success', 'throughput_error'], ['Throughput Success', 'Throughput Error'], ['green','red']);
+		Chart.draw('thread', series.aggs_timestamp, 'timestamp', ['threads'], ['Threads'], []);
+	});
 	
 	Series.aggregate_by_httpcode($routeParams.name, $routeParams.version, $routeParams.run).success(function(series){
 		for (var i=0; i<series.length; i++) {
@@ -55,6 +62,5 @@ jmeterReportingControllers.controller("LoadTestCtrl" ,function ($scope, $routePa
 			  data: series
 		});
     });
-	
 	
 });

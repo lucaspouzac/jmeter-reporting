@@ -1,5 +1,7 @@
 package org.jmeter.reporting.domain.aggregate;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AggregateTimestamp implements Comparable<AggregateTimestamp> {
@@ -12,8 +14,13 @@ public class AggregateTimestamp implements Comparable<AggregateTimestamp> {
 	@JsonProperty(value = "throughput_error")
 	private int throughputError;
 
-	@JsonProperty(value = "thread_count")
-	private int threadCount;
+	private int timeSuccess;
+
+	private int timeError;
+
+	@JsonProperty(value = "threads")
+	@JsonInclude(Include.NON_NULL)
+	private Integer threads;
 
 	@JsonProperty(value = "timestamp")
 	public Long getTimestamp() {
@@ -40,13 +47,33 @@ public class AggregateTimestamp implements Comparable<AggregateTimestamp> {
 	public void setThroughputError(int throughputError) {
 		this.throughputError = throughputError;
 	}
-
-	public int getThreadCount() {
-		return threadCount;
+	
+	@JsonProperty(value = "avg_times_success")
+	public double getAvgTimesSuccess() {
+		return throughputSuccess > 0 ? (double) timeSuccess / throughputSuccess : 0;
 	}
 
-	public void setThreadCount(int threadCount) {
-		this.threadCount = threadCount;
+	@JsonProperty(value = "time_success")
+	public void setTimeSuccess(int timeSuccess) {
+		this.timeSuccess = timeSuccess;
+	}
+	
+	@JsonProperty(value = "avg_times_error")
+	public double getAvgTimesError() {
+		return throughputError > 0 ? (double) timeError / throughputError : 0;
+	}
+
+	@JsonProperty(value = "time_error")
+	public void setTimeError(int timeError) {
+		this.timeError = timeError;
+	}
+
+	public Integer getThreads() {
+		return threads;
+	}
+
+	public void setThreads(Integer threads) {
+		this.threads = threads;
 	}
 
 	@Override
@@ -79,8 +106,8 @@ public class AggregateTimestamp implements Comparable<AggregateTimestamp> {
 	public String toString() {
 		return "AggregateTimestamp [timestamp=" + timestamp
 				+ ", throughputSuccess=" + throughputSuccess
-				+ ", throughputError=" + throughputError + ", threadCount="
-				+ threadCount + "]";
+				+ ", throughputError=" + throughputError + ", threads="
+				+ threads + "]";
 	}
 
 	@Override

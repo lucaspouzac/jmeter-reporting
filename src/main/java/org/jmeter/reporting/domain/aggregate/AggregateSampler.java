@@ -1,5 +1,9 @@
 package org.jmeter.reporting.domain.aggregate;
 
+import java.util.SortedSet;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AggregateSampler implements Comparable<AggregateSampler> {
@@ -9,14 +13,18 @@ public class AggregateSampler implements Comparable<AggregateSampler> {
 	@JsonProperty(value = "iterations")
 	private int iterations;
 
-	@JsonProperty(value = "avg_time")
-	private double averageTime;
+	@JsonProperty(value = "avg_times")
+	private double averageTimes;
 
 	@JsonProperty(value = "avg_byt")
 	private double averageByte;
 
 	@JsonProperty(value = "success")
 	private int success;
+
+	@JsonProperty(value = "aggs_timestamp")
+	@JsonInclude(Include.NON_NULL)
+	private SortedSet<AggregateTimestamp> aggregatesTimestamp;
 
 	@JsonProperty(value = "label")
 	public String getLabel() {
@@ -36,12 +44,12 @@ public class AggregateSampler implements Comparable<AggregateSampler> {
 		this.iterations = iterations;
 	}
 
-	public double getAverageTime() {
-		return averageTime;
+	public double getAverageTimes() {
+		return averageTimes;
 	}
 
-	public void setAverageTime(double averageTime) {
-		this.averageTime = averageTime;
+	public void setAverageTimes(double averageTimes) {
+		this.averageTimes = averageTimes;
 	}
 
 	public double getAverageByte() {
@@ -58,6 +66,15 @@ public class AggregateSampler implements Comparable<AggregateSampler> {
 
 	public void setSuccess(int success) {
 		this.success = success;
+	}
+
+	public SortedSet<AggregateTimestamp> getAggregatesTimestamp() {
+		return aggregatesTimestamp;
+	}
+
+	public void setAggregatesTimestamp(
+			SortedSet<AggregateTimestamp> aggregatesTimestamp) {
+		this.aggregatesTimestamp = aggregatesTimestamp;
 	}
 
 	@Override
@@ -88,8 +105,9 @@ public class AggregateSampler implements Comparable<AggregateSampler> {
 	@Override
 	public String toString() {
 		return "AggregateSampler [sampler=" + sampler + ", iterations="
-				+ iterations + ", averageTime=" + averageTime
-				+ ", averageByte=" + averageByte + ", success=" + success + "]";
+				+ iterations + ", averageTimes=" + averageTimes
+				+ ", averageByte=" + averageByte + ", success=" + success
+				+ ", aggregatesTimestamp=" + aggregatesTimestamp + "]";
 	}
 
 	@Override

@@ -14,13 +14,35 @@
 			<tr>
 				<td>{{sampler.label}}</td>
 				<td>{{sampler.iterations}}</td>
-				<td>{{sampler.avg_time.toFixed(2)}}</td>
+				<td>{{sampler.avg_times.toFixed(2)}}</td>
 				<td>{{sampler.avg_byt.toFixed(2)}}</td>
 				<td>{{((sampler.success / sampler.iterations) * 100).toFixed(2)}}</td>
 			</tr>
 		</tbody>
+		<tbody>
+			<tr>
+				<th>{{global.label}}</th>
+				<th>{{global.iterations}}</th>
+				<th>{{global.avg_times.toFixed(2)}}</th>
+				<th>{{global.avg_byt.toFixed(2)}}</th>
+				<th>{{((global.success / global.iterations) * 100).toFixed(2)}}</th>
+			</tr>
+		</tbody>
 	</table>
 </div>
-<div id="thread_count" style="height: 200px;"></div>
-<div id="throughput" style="height: 350px;"></div>
-<div id="httpcode" style="height: 350px;"></div>
+<div class="panel panel-info">
+	<div class="panel-heading">Threads Count</div>
+	<div id="thread" style="height: 200px;"></div>
+</div>
+<div class="panel panel-info">
+	<div class="panel-heading">Throughput (req/s)</div>
+	<div id="throughput" style="height: 350px;"></div>
+</div>
+<div class="panel panel-info">
+	<div class="panel-heading">Http Code Distribution</div>
+	<div id="httpcode" style="height: 350px;"></div>
+</div>
+<div class="panel panel-info" ng-repeat="sampler in samplers">
+	<div class="panel-heading">Average Response Times (ms) : {{sampler.label}}</div>
+	<div id="{{sampler.label}}" style="height: 350px;"></div>
+</div>

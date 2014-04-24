@@ -29,7 +29,7 @@ jmeterReportingApp.factory("Series", [ '$http', function (async) {
         aggregate_by_timestamp : function(name, version, run) {
             return async({
             	method: 'GET',
-            	url: API_URI + '/aggregate_by_timestamp/' + name + '/' + version + '/' + run
+            	url: API_URI + '/aggregate_by_timestamp/' + name + '/' + version + '/' + run + '?details=true'
             });
         },
 
@@ -40,10 +40,10 @@ jmeterReportingApp.factory("Series", [ '$http', function (async) {
             });
 	    },
 
-        aggregate_by_sampler : function(name, version, run) {
+        aggregate_by_sampler : function(name, version, run, details) {
             return async({
             	method: 'GET',
-            	url: API_URI + '/aggregate_by_sampler/' + name + '/' + version + '/' + run
+            	url: API_URI + '/aggregate_by_sampler/' + name + '/' + version + '/' + run + '?details=' + details
             });
 	    }
         
