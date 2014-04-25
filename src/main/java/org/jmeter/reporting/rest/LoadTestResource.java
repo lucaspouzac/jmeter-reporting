@@ -22,9 +22,18 @@ public class LoadTestResource {
 	}
 
 	@GET("/load_tests")
-	public Iterable<LoadTest> find(Optional<Integer> skip,
+	public Iterable<LoadTest> find(Optional<String> name,
+			Optional<String> version, Optional<Integer> skip,
 			Optional<Integer> limit) {
-		return loadTestService.find(skip.or(0), limit.or(10));
+		if (name.isPresent()) {
+			if (version.isPresent()) {
+				return loadTestService.find(name.get(), version.get(), skip.or(0), limit.or(10));
+			} else {
+				return loadTestService.find(name.get(), skip.or(0), limit.or(10));
+			}
+		} else {
+			return loadTestService.find(skip.or(0), limit.or(10));
+		}
 	}
 
 	@GET("/load_tests/name")

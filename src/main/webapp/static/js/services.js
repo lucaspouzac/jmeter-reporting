@@ -9,6 +9,20 @@ jmeterReportingApp.factory("LoadTest", function ($http) {
             return $http.get(API_URI + '/name');
         },
 
+        find : function(name, version, skip, limit) {
+        	var url = API_URI + '?name=' + name;
+        	if (version != undefined) {
+        		url = url + '&version=' + version;
+        	}
+        	if (skip != undefined) {
+        		url = url + '&skip=' + skip;
+        	}
+        	if (limit != undefined) {
+        		url = url + '&limit=' + limit;
+        	}
+            return $http.get(url);
+        },
+
 	    findLast : function(name) {
 	        return $http.get(API_URI + '/find_last/' + name);
 	    },
@@ -26,10 +40,14 @@ jmeterReportingApp.factory("Series", [ '$http', function (async) {
 
     return {
 
-        aggregate_by_timestamp : function(name, version, run) {
+        aggregate_by_timestamp : function(name, version, run, details, interval) {
+        	var url = API_URI + '/aggregate_by_timestamp/' + name + '/' + version + '/' + run + '?details=' + details
+        	if (interval != undefined) {
+        		 url = url + '&interval=' + interval
+        	}
             return async({
             	method: 'GET',
-            	url: API_URI + '/aggregate_by_timestamp/' + name + '/' + version + '/' + run + '?details=true'
+            	url: url
             });
         },
 
@@ -40,10 +58,14 @@ jmeterReportingApp.factory("Series", [ '$http', function (async) {
             });
 	    },
 
-        aggregate_by_sampler : function(name, version, run, details) {
+        aggregate_by_sampler : function(name, version, run, details, interval) {
+        	var url = API_URI + '/aggregate_by_sampler/' + name + '/' + version + '/' + run + '?details=' + details
+        	if (interval != undefined) {
+       		 url = url + '&interval=' + interval
+       	}
             return async({
             	method: 'GET',
-            	url: API_URI + '/aggregate_by_sampler/' + name + '/' + version + '/' + run + '?details=' + details
+            	url: url
             });
 	    }
         

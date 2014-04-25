@@ -32,8 +32,15 @@ public class LoadTestService {
 
 	public Iterable<LoadTest> find(int skip, int limit) {
 		Find find = loadTests.get().find();
-		find.skip(skip).limit(limit);
-		return find.as(LoadTest.class);
+		return find.skip(skip).limit(limit).as(LoadTest.class);
+	}
+	
+	public Iterable<LoadTest> find(String name, int skip, int limit) {
+		return find("{ ltKey.name: # }", skip, limit, name);
+	}
+
+	public Iterable<LoadTest> find(String name, String version, int skip, int limit) {
+		return find("{ ltKey.name: #, ltKey.version: # }", skip, limit, name, version);
 	}
 
 	public Optional<LoadTest> findByKey(String name, String version, Integer run) {
@@ -53,18 +60,6 @@ public class LoadTestService {
 
 	public LoadTest findLastRefByName(String name) {
 		return findLast("{ ltKey.name: #, ref: true }", name);
-	}
-
-	private LoadTest findLast(String query, Object... parameters) {
-		Find find = loadTests.get().find(query, parameters);
-		find.sort("{date: -1}");
-		find.limit(1);
-		LoadTest result = null;
-		Iterator<LoadTest> lst = find.as(LoadTest.class).iterator();
-		if (lst.hasNext()) {
-			result = lst.next();
-		}
-		return result;
 	}
 
 	public Optional<LoadTest> findLastByNameAndVersion(String name,
@@ -97,4 +92,24 @@ public class LoadTestService {
 
 		return loadTest;
 	}
+	
+
+	private Iterable<LoadTest> find(String query, int skip, int limit, Object... parameters) {
+		Find find = loadTests.get().find(query, parameters);
+		find.sort("{date: -1}");
+		return find.skip(skip).limit(limit).as(LoadTest.class);
+	}
+	
+	private LoadTest findLast(String query, Object... parameters) {
+		Find find = loadTests.get().find(query, parameters);
+		find.sort("{date: -1}");
+		find.limit(1);
+		LoadTest result = null;
+		Iterator<LoadTest> lst = find.as(LoadTest.class).iterator();
+		if (lst.hasNext()) {
+			result = lst.next();
+		}
+		return result;
+	}
+
 }

@@ -17,6 +17,14 @@ jmeterReportingApp.config(['$routeProvider', function($routeProvider) {
 	            templateUrl: 'partials/loadtest.html',
 	            controller : 'LoadTestCtrl'
 	        })
+	        .when('/history/:name', {
+	            templateUrl: 'partials/history.html',
+	            controller : 'HistoryCtrl'
+	        })
+	        .when('/history/:name/:version', {
+	            templateUrl: 'partials/history.html',
+	            controller : 'HistoryCtrl'
+	        })
             .otherwise({
                 redirectTo: '/home'
             });
