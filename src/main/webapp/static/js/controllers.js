@@ -76,3 +76,13 @@ jmeterReportingControllers.controller("HistoryCtrl" ,function ($scope, $routePar
         $scope.loadTests = resp;
     });    
 });
+
+//Config Load Test Controller
+jmeterReportingControllers.controller("ConfigLoadTestCtrl" ,function ($scope) {
+	
+});
+
+//Upload JTL Controller
+jmeterReportingControllers.controller("UploadJtlCtrl" ,function ($scope) {
+	
+});
