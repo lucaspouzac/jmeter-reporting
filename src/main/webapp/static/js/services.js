@@ -80,7 +80,7 @@ jmeterReportingApp.factory("Chart", function () {
         	if (lineColors.length == 0) {
         		lineColors = Morris.Line.prototype.defaults.lineColors;
         	}
-        	Morris.Line({
+        	return Morris.Line({
     			  element: name,
     			  data: data,
     			  xkey: xKey,
