@@ -1,0 +1,272 @@
+title: "should find loadtests"
+given:
+  - time: 2014-04-25T13:31:43.841+02:00
+  - collection: load_tests
+    data: |
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656df2"} , "ltKey" : { "name" : "api-geo" , "version" : "1.0-SNAPSHOT" , "run" : 1} , "date" : { "$date" : "2014-04-13T20:53:56.697Z"} , "st" : 1 , "ref" : false}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656df3"} , "ltKey" : { "name" : "api-geo" , "version" : "1.0-SNAPSHOT" , "run" : 2} , "date" : { "$date" : "2014-04-14T20:53:56.697Z"} , "st" : 1 , "ref" : false}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656df4"} , "ltKey" : { "name" : "api-geo" , "version" : "1.0-SNAPSHOT" , "run" : 3} , "date" : { "$date" : "2014-04-14T21:53:56.697Z"} , "st" : 1 , "ref" : false}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656df5"} , "ltKey" : { "name" : "api-geo" , "version" : "1.0" , "run" : 1} , "date" : { "$date" : "2014-04-14T21:55:56.697Z"} , "st" : 1 , "ref" : false}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656df6"} , "ltKey" : { "name" : "api-geo" , "version" : "1.0" , "run" : 2} , "date" : { "$date" : "2014-04-15T01:53:56.697Z"} , "st" : 1 , "ref" : true}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656df7"} , "ltKey" : { "name" : "api-geo" , "version" : "1.1-SNAPSHOT" , "run" : 1} , "date" : { "$date" : "2014-04-15T03:53:56.697Z"} , "st" : 1 , "ref" : false}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656df8"} , "ltKey" : { "name" : "api-geo" , "version" : "1.1-SNAPSHOT" , "run" : 2} , "date" : { "$date" : "2014-04-15T03:53:56.797Z"} , "st" : 1 , "ref" : false}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656df9"} , "ltKey" : { "name" : "api-geo" , "version" : "1.1" , "run" : 1} , "date" : { "$date" : "2014-04-15T20:53:56.697Z"} , "st" : 1 , "ref" : true}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656e01"} , "ltKey" : { "name" : "api-geo" , "version" : "1.1" , "run" : 2} , "date" : { "$date" : "2014-04-15T20:53:56.698Z"} , "st" : 1 , "ref" : false}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656dfa"} , "ltKey" : { "name" : "api-map" , "version" : "1.0" , "run" : 1} , "date" : { "$date" : "2014-04-14T20:53:56.697Z"} , "st" : 1 , "ref" : false}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656dfb"} , "ltKey" : { "name" : "api-map" , "version" : "1.1" , "run" : 1} , "date" : { "$date" : "2014-04-15T20:53:56.697Z"} , "st" : 1 , "ref" : false}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656dfc"} , "ltKey" : { "name" : "api-word" , "version" : "1.0" , "run" : 1} , "date" : { "$date" : "2014-04-15T20:53:56.697Z"} , "st" : 1 , "ref" : true}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656dfd"} , "ltKey" : { "name" : "api-day" , "version" : "1.0" , "run" : 1} , "date" : { "$date" : "2014-04-12T20:53:56.697Z"} , "st" : 1 , "ref" : true}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656dfe"} , "ltKey" : { "name" : "api-day" , "version" : "1.1" , "run" : 1} , "date" : { "$date" : "2014-04-13T20:53:56.697Z"} , "st" : 1 , "ref" : false}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656dff"} , "ltKey" : { "name" : "api-day" , "version" : "1.1" , "run" : 2} , "date" : { "$date" : "2014-04-14T20:53:56.697Z"} , "st" : 1 , "ref" : true}
+        { "_id" : { "$oid" : "534d9fd9f4ef65a211656e00"} , "ltKey" : { "name" : "api-day" , "version" : "1.1" , "run" : 3} , "date" : { "$date" : "2014-04-15T20:53:56.697Z"} , "st" : 1 , "ref" : false}
+wts:
+  - when: |
+       GET load_tests
+       Cookie: RestxSession-jmeter-reporting={"_expires":"2014-05-25T13:31:43.841+02:00","principal":"admin","sessionKey":"301a07e4-d0d5-4f9a-8a78-fd0bbd0170bc"}; RestxSessionSignature-jmeter-reporting=4XVY7K/Nm+06jjOSglCGDthbiu8=
+    then: |
+        [ {
+          "_id" : "534d9fd9f4ef65a211656df2",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0-SNAPSHOT",
+            "run" : 1
+          },
+          "date" : "2014-04-13T20:53:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df3",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0-SNAPSHOT",
+            "run" : 2
+          },
+          "date" : "2014-04-14T20:53:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df4",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0-SNAPSHOT",
+            "run" : 3
+          },
+          "date" : "2014-04-14T21:53:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df5",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0",
+            "run" : 1
+          },
+          "date" : "2014-04-14T21:55:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df6",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0",
+            "run" : 2
+          },
+          "date" : "2014-04-15T01:53:56.697+0000",
+          "st" : 1,
+          "ref" : true
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df7",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.1-SNAPSHOT",
+            "run" : 1
+          },
+          "date" : "2014-04-15T03:53:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df8",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.1-SNAPSHOT",
+            "run" : 2
+          },
+          "date" : "2014-04-15T03:53:56.797+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df9",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.1",
+            "run" : 1
+          },
+          "date" : "2014-04-15T20:53:56.697+0000",
+          "st" : 1,
+          "ref" : true
+        }, {
+          "_id" : "534d9fd9f4ef65a211656e01",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.1",
+            "run" : 2
+          },
+          "date" : "2014-04-15T20:53:56.698+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656dfa",
+          "ltKey" : {
+            "name" : "api-map",
+            "version" : "1.0",
+            "run" : 1
+          },
+          "date" : "2014-04-14T20:53:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        } ]
+  - when: |
+       GET load_tests?name=api-geo
+       Cookie: RestxSession-jmeter-reporting={"_expires":"2014-05-25T13:31:54.020+02:00","principal":"admin","sessionKey":"301a07e4-d0d5-4f9a-8a78-fd0bbd0170bc"}; RestxSessionSignature-jmeter-reporting=GEFue5A3IOuc/2+yyeAC7ZAIfJo=
+    then: |
+        [ {
+          "_id" : "534d9fd9f4ef65a211656e01",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.1",
+            "run" : 2
+          },
+          "date" : "2014-04-15T20:53:56.698+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df9",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.1",
+            "run" : 1
+          },
+          "date" : "2014-04-15T20:53:56.697+0000",
+          "st" : 1,
+          "ref" : true
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df8",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.1-SNAPSHOT",
+            "run" : 2
+          },
+          "date" : "2014-04-15T03:53:56.797+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df7",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.1-SNAPSHOT",
+            "run" : 1
+          },
+          "date" : "2014-04-15T03:53:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df6",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0",
+            "run" : 2
+          },
+          "date" : "2014-04-15T01:53:56.697+0000",
+          "st" : 1,
+          "ref" : true
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df5",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0",
+            "run" : 1
+          },
+          "date" : "2014-04-14T21:55:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df4",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0-SNAPSHOT",
+            "run" : 3
+          },
+          "date" : "2014-04-14T21:53:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df3",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0-SNAPSHOT",
+            "run" : 2
+          },
+          "date" : "2014-04-14T20:53:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df2",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0-SNAPSHOT",
+            "run" : 1
+          },
+          "date" : "2014-04-13T20:53:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        } ]
+  - when: |
+       GET load_tests?name=api-geo&version=1.1
+       Cookie: RestxSession-jmeter-reporting={"_expires":"2014-05-25T13:32:04.256+02:00","principal":"admin","sessionKey":"301a07e4-d0d5-4f9a-8a78-fd0bbd0170bc"}; RestxSessionSignature-jmeter-reporting=XQOixCQ0qEaudvxZFtW2AZh8oZ8=
+    then: |
+        [ {
+          "_id" : "534d9fd9f4ef65a211656e01",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.1",
+            "run" : 2
+          },
+          "date" : "2014-04-15T20:53:56.698+0000",
+          "st" : 1,
+          "ref" : false
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df9",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.1",
+            "run" : 1
+          },
+          "date" : "2014-04-15T20:53:56.697+0000",
+          "st" : 1,
+          "ref" : true
+        } ]
+  - when: |
+       GET load_tests?name=api-geo&skip=4&limit=2
+       Cookie: RestxSession-jmeter-reporting={"_expires":"2014-05-25T13:32:23.134+02:00","principal":"admin","sessionKey":"301a07e4-d0d5-4f9a-8a78-fd0bbd0170bc"}; RestxSessionSignature-jmeter-reporting=rHyKH9mUTBv+1S2AN17lLGrdzGU=
+    then: |
+        [ {
+          "_id" : "534d9fd9f4ef65a211656df6",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0",
+            "run" : 2
+          },
+          "date" : "2014-04-15T01:53:56.697+0000",
+          "st" : 1,
+          "ref" : true
+        }, {
+          "_id" : "534d9fd9f4ef65a211656df5",
+          "ltKey" : {
+            "name" : "api-geo",
+            "version" : "1.0",
+            "run" : 1
+          },
+          "date" : "2014-04-14T21:55:56.697+0000",
+          "st" : 1,
+          "ref" : false
+        } ]
