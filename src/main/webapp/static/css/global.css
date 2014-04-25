@@ -27,11 +27,6 @@ body {
 
 a:hover,
 a:focus {
-	color: #333333;
 	background-color: transparent;
 	text-decoration: none;
-}
-
-a {
-	color: #777777;
 }
