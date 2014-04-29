@@ -108,6 +108,21 @@ jmeterReportingControllers.controller("ConfigLoadTestCtrl" ,function ($scope) {
 });
 
 //Upload JTL Controller
-jmeterReportingControllers.controller("UploadJtlCtrl" ,function ($scope) {
-	
+jmeterReportingControllers.controller("UploadJtlCtrl" ,function ($scope, $fileUploader) {
+
+    $scope.api = {name:'api-test', version: '1.0'};
+                     	
+    // create a uploader with options
+    var uploader = $scope.uploader = $fileUploader.create({
+        scope: $scope, // to automatically update the html. Default: $rootScope
+        filters: [
+            function (item) { // first user filter
+                return item.name.indexOf('.jtl', item.name.length - 4) !== -1;
+            }
+        ]
+    });
+    
+    uploader.bind('beforeupload', function (event, item) {
+    	item.url = 'api/upload/' + $scope.api.name + '/' + $scope.api.version; 
+    });
 });

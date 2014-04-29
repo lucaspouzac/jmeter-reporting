@@ -94,8 +94,8 @@ public class SampleService {
 		StringBuilder sb = new StringBuilder("{$match:{'ltKey': { 'name': '")
 				.append(name).append("', 'version': '").append(version)
 				.append("', 'run': ").append(run).append(" } ");
-		if (StringUtils.isNotEmpty(sampler)) {
-			sb.append(", 'lb': '").append(sampler).append("'");
+		if (StringUtils.isNotEmpty(sampler)) {	
+			sb.append(", 'lb': \"").append(sampler).append("\"");
 		}
 		sb.append(" }}");
 		return sb.toString();

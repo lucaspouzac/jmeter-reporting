@@ -67,9 +67,9 @@ public class LoadTestService {
 		LoadTest result = null;
 
 		Find find = loadTests.get()
-				.find("{name: #, version: #}", name, version);
+				.find("{ ltKey.name: #, ltKey.version: # }", name, version);
 		find.limit(1);
-		find.sort("{run: -1}");
+		find.sort("{ltKey.run: -1}");
 		Iterable<LoadTest> ldTests = find.as(LoadTest.class);
 
 		if (ldTests.iterator().hasNext()) {

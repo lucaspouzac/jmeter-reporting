@@ -3,7 +3,8 @@
 /* App Module */
 var jmeterReportingApp = angular.module('jmeterReportingApp', [
 	'ngRoute',
-	'jmeterReportingControllers'
+	'jmeterReportingControllers', 
+	'angularFileUpload'
 ]);
 
 jmeterReportingApp.config(['$routeProvider', function($routeProvider) {

@@ -65,7 +65,38 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<restx.version>0.32</restx.version>
 	</properties>
-
+	
+	<!--build>
+		<plugins>
+			<plugin>
+				<groupId>com.kelveden</groupId>
+				<artifactId>maven-karma-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>start</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<configFile>src/test/resources/config/karma.conf.coffee</configFile>
+					<junitReportFile>${project.build.directory}/karma-surefire-reports/test-results.xml</junitReportFile>
+					<reportsDirectory>${project.build.directory}/karma-reports</reportsDirectory>
+					<browsers>PhantomJS</browsers>
+					<autoWatch>false</autoWatch>
+					<singleRun>true</singleRun>
+					<colors>true</colors>
+					<skipKarma>false</skipKarma>
+					<skipTests>false</skipTests>
+					<karmaFailureIgnore>false</karmaFailureIgnore>
+					<reporters>junit</reporters>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build-->
+	
 	<dependencies>
 		<dependency>
 			<groupId>io.restx</groupId>
@@ -131,6 +162,11 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3</version>
 		</dependency>
 
 		<!-- Test Dependencies -->
