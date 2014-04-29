@@ -2,6 +2,7 @@ package org.jmeter.reporting.rest;
 
 import org.jmeter.reporting.domain.LoadTest;
 import org.jmeter.reporting.service.LoadTestService;
+import org.jmeter.reporting.service.SampleService;
 
 import restx.annotations.GET;
 import restx.annotations.RestxResource;
@@ -17,7 +18,8 @@ public class LoadTestResource {
 
 	private final LoadTestService loadTestService;
 
-	public LoadTestResource(LoadTestService loadTestService) {
+	public LoadTestResource(LoadTestService loadTestService,
+			SampleService sampleService) {
 		this.loadTestService = loadTestService;
 	}
 
@@ -27,9 +29,11 @@ public class LoadTestResource {
 			Optional<Integer> limit) {
 		if (name.isPresent()) {
 			if (version.isPresent()) {
-				return loadTestService.find(name.get(), version.get(), skip.or(0), limit.or(10));
+				return loadTestService.find(name.get(), version.get(),
+						skip.or(0), limit.or(10));
 			} else {
-				return loadTestService.find(name.get(), skip.or(0), limit.or(10));
+				return loadTestService.find(name.get(), skip.or(0),
+						limit.or(10));
 			}
 		} else {
 			return loadTestService.find(skip.or(0), limit.or(10));

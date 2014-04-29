@@ -4,8 +4,6 @@ import java.nio.file.Paths;
 
 import javax.inject.Named;
 
-import org.jongo.Jongo;
-
 import restx.factory.Module;
 import restx.factory.Provides;
 import restx.mongo.MongoModule;
