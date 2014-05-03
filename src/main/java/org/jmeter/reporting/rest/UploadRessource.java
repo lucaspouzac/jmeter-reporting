@@ -1,14 +1,11 @@
 package org.jmeter.reporting.rest;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.apache.commons.fileupload.FileItem;
@@ -19,7 +16,6 @@ import org.jmeter.reporting.domain.LoadTest;
 import org.jmeter.reporting.domain.LoadTestKey;
 import org.jmeter.reporting.domain.Sample;
 import org.jmeter.reporting.rest.parts.RestXRequestContext;
-import org.jmeter.reporting.service.LoadTestService;
 import org.jmeter.reporting.service.SampleService;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -32,20 +28,18 @@ import restx.annotations.RestxResource;
 import restx.factory.Component;
 import restx.security.PermitAll;
 
-import com.google.common.base.Optional;
-
 @Component
 @RestxResource
 @PermitAll
 public class UploadRessource {
 
-	private final LoadTestService loadTestService;
+	private final LoadTestResource loadTestResource;
 
 	private final SampleService sampleService;
 
-	public UploadRessource(LoadTestService loadTestService,
+	public UploadRessource(LoadTestResource loadTestResource,
 			SampleService sampleService) {
-		this.loadTestService = loadTestService;
+		this.loadTestResource = loadTestResource;
 		this.sampleService = sampleService;
 	}
 
@@ -56,29 +50,30 @@ public class UploadRessource {
 			@Param(kind = Param.Kind.CONTEXT, value = "request") RestxRequest request) {
 		LoadTest loadTest = null;
 		DiskFileItemFactory factory = new DiskFileItemFactory();
-		factory.setRepository(new File("/tmp"));
 		ServletFileUpload upload = new ServletFileUpload(factory);
 
 		List<FileItem> items = null;
 		try {
 			items = upload.parseRequest(new RestXRequestContext(request));
-			int run = 1;
 
-			// Get last run number
-			Optional<LoadTest> ldTest = loadTestService
-					.findLastByNameAndVersion(name, version);
-			if (ldTest.isPresent()) {
-				run = ldTest.get().getLoadTestKey().getRun() + 1;
-			}
+			// Start load test
+			loadTest = loadTestResource.start(name, version);
 
-			// Create and save load test
-			loadTest = loadTestService.createNew(name, version, run);
-
+			// Parse samples
 			for (FileItem item : items) {
 				// Parse JMeter and create sample
-				SAXParserFactory.newInstance().newSAXParser().parse(item.getInputStream(), new JMeterParser(loadTest.getLoadTestKey()));
+				SAXParserFactory
+						.newInstance()
+						.newSAXParser()
+						.parse(item.getInputStream(),
+								new JMeterParser(loadTest.getLoadTestKey()));
 			}
-		} catch (IOException | FileUploadException | SAXException | ParserConfigurationException  e) {
+
+			// End load test
+			loadTest = loadTestResource.stop(name, version, loadTest
+					.getLoadTestKey().getRun());
+		} catch (IOException | FileUploadException | SAXException
+				| ParserConfigurationException e) {
 			System.err.println(e.getMessage());
 			// TODO Delete sample
 			// TODO Delete loadtest
@@ -92,12 +87,12 @@ public class UploadRessource {
 		}
 		return loadTest;
 	}
-	
+
 	private class JMeterParser extends DefaultHandler {
 
-		private LoadTestKey loadTestKey;
+		private final LoadTestKey loadTestKey;
 
-		private Set<String> nodesName = new HashSet<>();
+		private final Set<String> nodesName = new HashSet<>();
 
 		public JMeterParser(LoadTestKey loadTestKey) {
 			this.loadTestKey = loadTestKey;
@@ -121,8 +116,10 @@ public class UploadRessource {
 				sample.setThreadName(attributes.getValue("tn"));
 				sample.setDataType(attributes.getValue("dt"));
 				sample.setBytes(parseInteger(attributes.getValue("by")));
-				sample.setActiveThreadsGroup(parseInteger(attributes.getValue("ng")));
-				sample.setActiveThreadsAllGroups(parseInteger(attributes.getValue("na")));
+				sample.setActiveThreadsGroup(parseInteger(attributes
+						.getValue("ng")));
+				sample.setActiveThreadsAllGroups(parseInteger(attributes
+						.getValue("na")));
 
 				sampleService.save(sample);
 			}
@@ -146,5 +143,5 @@ public class UploadRessource {
 			return Boolean.parseBoolean(value);
 		}
 	}
-	
+
 }

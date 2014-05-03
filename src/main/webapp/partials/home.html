@@ -19,7 +19,7 @@
 			<tbody>
 				<tr ng-if="loadTestsLast[loadTestName] != null">
 					<td><a href="#load_test/{{loadTestName}}/{{loadTestsLast[loadTestName].ltKey.version}}/{{loadTestsLast[loadTestName].ltKey.run}}">Last Load Test</a></td>
-					<td>{{loadTestsLast[loadTestName].ltKey.version}}</td>
+					<td><a href="#history/{{loadTestName}}/{{loadTestsLast[loadTestName].ltKey.version}}">{{loadTestsLast[loadTestName].ltKey.version}}</a></td>
 					<td><span class="badge">#{{loadTestsLast[loadTestName].ltKey.run}}</span></td>
 				</tr>
 				<tr ng-if="loadTestsLast[loadTestName] == null">
@@ -29,7 +29,7 @@
 				</tr>
 				<tr ng-if="loadTestsLastRef[loadTestName] != null">
 					<td><a href="#load_test/{{loadTestName}}/{{loadTestsLastRef[loadTestName].ltKey.version}}/{{loadTestsLastRef[loadTestName].ltKey.run}}">Last Reference</a></td>
-					<td>{{loadTestsLastRef[loadTestName].ltKey.version}}</td>
+					<td><a href="#history/{{loadTestName}}/{{loadTestsLastRef[loadTestName].ltKey.version}}">{{loadTestsLastRef[loadTestName].ltKey.version}}</a></td>
 					<td><span class="badge">#{{loadTestsLastRef[loadTestName].ltKey.run}}</span></td>
 				</tr>
 				<tr ng-if="loadTestsLastRef[loadTestName] == null">

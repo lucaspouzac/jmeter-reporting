@@ -1,0 +1,20 @@
+title: Aggregate by timestamp 20140503 092759
+given:
+  - time: 2014-05-03T09:27:59.666+02:00
+  - collection: load_tests
+    data: |
+        { "_id" : { "$oid" : "5364982744ae2d9fb474d6a6"} , "ltKey" : { "name" : "api-test" , "version" : "0.0.1" , "run" : 1} , "date" : { "$date" : "2014-05-03T07:17:59.660Z"} , "fn" : true , "ref" : false , "iterations" : 328 , "avg_times" : 3.2286585365853657 , "avg_byt" : 775.4634146341464 , "success" : 328}
+        { "_id" : { "$oid" : "5364982844ae2d9fb474d7ef"} , "ltKey" : { "name" : "api-test" , "version" : "0.1.0" , "run" : 1} , "date" : { "$date" : "2014-05-03T07:18:00.132Z"} , "fn" : true , "ref" : false , "iterations" : 324 , "avg_times" : 2.7808641975308643 , "avg_byt" : 775.4814814814815 , "success" : 324}
+        { "_id" : { "$oid" : "5364982844ae2d9fb474d934"} , "ltKey" : { "name" : "api-test" , "version" : "1.0.0" , "run" : 1} , "date" : { "$date" : "2014-05-03T07:18:00.559Z"} , "fn" : true , "ref" : false , "iterations" : 307 , "avg_times" : 2.576547231270358 , "avg_byt" : 775.514657980456 , "success" : 307}
+        { "_id" : { "$oid" : "5364982844ae2d9fb474da68"} , "ltKey" : { "name" : "api-test" , "version" : "1.0.0" , "run" : 2} , "date" : { "$date" : "2014-05-03T07:18:00.902Z"} , "fn" : true , "ref" : true , "iterations" : 327 , "avg_times" : 2.7155963302752295 , "avg_byt" : 775.4556574923547 , "success" : 327}
+        { "_id" : { "$oid" : "5364982944ae2d9fb474dbb0"} , "ltKey" : { "name" : "api-test" , "version" : "1.0.0" , "run" : 3} , "date" : { "$date" : "2014-05-03T07:18:01.210Z"} , "fn" : true , "ref" : false , "iterations" : 333 , "avg_times" : 2.960960960960961 , "avg_byt" : 1231.6576576576576 , "success" : 153}
+        { "_id" : { "$oid" : "5364982944ae2d9fb474dcfe"} , "ltKey" : { "name" : "api-test" , "version" : "1.0.0" , "run" : 4} , "date" : { "$date" : "2014-05-03T07:18:01.528Z"} , "fn" : true , "ref" : false , "iterations" : 307 , "avg_times" : 2.6384364820846904 , "avg_byt" : 775.5114006514658 , "success" : 307}
+        { "_id" : { "$oid" : "5364982944ae2d9fb474de32"} , "ltKey" : { "name" : "api-demo" , "version" : "1.0.0" , "run" : 1} , "date" : { "$date" : "2014-05-03T07:18:01.810Z"} , "fn" : true , "ref" : false , "iterations" : 720 , "avg_times" : 2.9680555555555554 , "avg_byt" : 775.0277777777778 , "success" : 720}
+        { "_id" : { "$oid" : "5364982a44ae2d9fb474e103"} , "ltKey" : { "name" : "api-demo" , "version" : "1.0.0" , "run" : 2} , "date" : { "$date" : "2014-05-03T07:18:02.249Z"} , "fn" : true , "ref" : false , "iterations" : 716 , "avg_times" : 2.939944134078212 , "avg_byt" : 775.0279329608938 , "success" : 716}
+        { "_id" : { "$oid" : "5364984e44ae2d9fb474e3d0"} , "ltKey" : { "name" : "api-new" , "version" : "1.0.0" , "run" : 1} , "date" : { "$date" : "2014-05-03T07:18:38.977Z"} , "fn" : false , "ref" : false , "iterations" : 0 , "avg_times" : 0.0 , "avg_byt" : 0.0 , "success" : 0}
+wts:
+  - when: |
+       GET series/aggregate_by_timestamp/api-unknow/1.0/1
+       Cookie: RestxSession-jmeter-reporting={"_expires":"2014-06-02T09:27:59.666+02:00","principal":"admin","sessionKey":"747de43c-9bf2-4db6-b27d-3ee9056ba092"}; RestxSessionSignature-jmeter-reporting=ifqmqossBwSDqzEbcFlFiydeQ0c=
+    then: |
+       404

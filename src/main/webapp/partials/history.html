@@ -14,7 +14,7 @@
 					<th>Version</th>
 					<th>Run</th>
 					<th>Date</th>
-					<th>Status</th>
+					<th>Finish</th>
 					<th>Reference</th>
 					<th>Show</th>
 				</tr>
@@ -24,7 +24,7 @@
 					<td><a href="#history/{{loadTest.ltKey.name}}/{{loadTest.ltKey.version}}">{{loadTest.ltKey.version}}</a></td>
 					<td>{{loadTest.ltKey.run}}</td>
 					<td>{{loadTest.date}}</td>
-					<td>{{loadTest.st}}</td>
+					<td><span ng-if="loadTest.fn" class="label label-success glyphicon glyphicon-ok"> </span><span ng-if="!loadTest.fn" class="label label-danger glyphicon glyphicon-remove"> </span></td>
 					<td><span ng-if="loadTest.ref" class="label label-success glyphicon glyphicon-ok"> </span><span ng-if="!loadTest.ref" class="label label-danger glyphicon glyphicon-remove"> </span></td>
 					<td><a href="#load_test/{{loadTest.ltKey.name}}/{{loadTest.ltKey.version}}/{{loadTest.ltKey.run}}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-zoom-in"></span></a></td>
 				</tr>

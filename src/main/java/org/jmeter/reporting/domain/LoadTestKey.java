@@ -18,6 +18,16 @@ public class LoadTestKey {
 	@NotNull
 	private Integer run;
 
+	public LoadTestKey() {
+	}
+
+	public LoadTestKey(String name, String version, Integer run) {
+		super();
+		this.name = name;
+		this.version = version;
+		this.run = run;
+	}
+
 	public String getName() {
 		return name;
 	}

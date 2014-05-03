@@ -9,6 +9,8 @@
 	<div class="panel panel-info">
 		<div class="panel-heading">Actions</div>
 		Aggregation interval : <select class="form-control" ng-model="interval" ng-options="c.name for c in intervals" ng-change="updateInterval(false)"></select><br>
+		<button ng-if="!loadTest.ref" type="button" class="btn btn-danger" ng-click="updateReference(true)">Reference</button>
+		<button ng-if="loadTest.ref" type="button" class="btn btn-success active" ng-click="updateReference(false)">Reference</button>
 	</div>
 	
 	<div class="panel panel-info">
@@ -25,7 +27,7 @@
 			</thead>
 			<tbody ng-repeat="sampler in samplers">
 				<tr>
-					<td>{{sampler.label}}</td>
+					<td><a href="#details/{{path.name}}/{{path.version}}/{{path.run}}?sampler={{sampler.label}}">{{sampler.label}}</a></td>
 					<td>{{sampler.iterations}}</td>
 					<td>{{sampler.avg_times.toFixed(2)}}</td>
 					<td>{{sampler.avg_byt.toFixed(2)}}</td>
@@ -54,9 +56,5 @@
 	<div class="panel panel-info">
 		<div class="panel-heading">Http Code Distribution</div>
 		<div id="httpcode" style="height: 350px;"></div>
-	</div>
-	<div class="panel panel-info" ng-repeat="sampler in samplers">
-		<div class="panel-heading">Average Response Times (ms) : {{sampler.label}}</div>
-		<div id="{{sampler.label}}" style="height: 350px;"></div>
 	</div>
 </div>

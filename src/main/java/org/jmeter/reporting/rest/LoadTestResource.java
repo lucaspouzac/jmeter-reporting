@@ -1,10 +1,13 @@
 package org.jmeter.reporting.rest;
 
 import org.jmeter.reporting.domain.LoadTest;
+import org.jmeter.reporting.domain.LoadTestKey;
+import org.jmeter.reporting.domain.aggregate.AggregateSampler;
+import org.jmeter.reporting.service.AggregateService;
 import org.jmeter.reporting.service.LoadTestService;
-import org.jmeter.reporting.service.SampleService;
 
 import restx.annotations.GET;
+import restx.annotations.POST;
 import restx.annotations.RestxResource;
 import restx.factory.Component;
 import restx.security.PermitAll;
@@ -18,9 +21,12 @@ public class LoadTestResource {
 
 	private final LoadTestService loadTestService;
 
+	private final AggregateService aggregateService;
+
 	public LoadTestResource(LoadTestService loadTestService,
-			SampleService sampleService) {
+			AggregateService aggregateService) {
 		this.loadTestService = loadTestService;
+		this.aggregateService = aggregateService;
 	}
 
 	@GET("/load_tests")
@@ -61,6 +67,12 @@ public class LoadTestResource {
 		return loadTestService.findByKey(name, version, run);
 	}
 
+	@POST("/reference/{name}/{version}/{run}/{reference}")
+	public LoadTest updateReference(String name, String version, int run,
+			boolean reference) {
+		return loadTestService.updateReference(name, version, run, reference);
+	}
+
 	@GET("/start/{name}/{version}")
 	public LoadTest start(String name, String version) {
 		int run = 1;
@@ -73,12 +85,32 @@ public class LoadTestResource {
 		}
 
 		// Create and save
-		return loadTestService.createNew(name, version, run);
+		return loadTestService.save(new LoadTest(new LoadTestKey(name, version,
+				run)));
 	}
 
 	@GET("/stop/{name}/{version}/{run}")
 	public LoadTest stop(String name, String version, Integer run) {
+		// Find loadTest
+		Optional<LoadTest> loadTest = loadTestService.findByKey(name, version,
+				run);
+		if (loadTest.isPresent()) {
+
+			// Pre calcul
+			AggregateSampler aggregateSampler = aggregateService
+					.aggregateGlobal(name, version, run);
+
+			// Update Load Test
+			loadTest.get().setAverageByte(aggregateSampler.getAverageByte());
+			loadTest.get().setAverageTimes(aggregateSampler.getAverageTimes());
+			loadTest.get().setIterations(aggregateSampler.getIterations());
+			loadTest.get().setSuccess(aggregateSampler.getSuccess());
+			loadTest.get().setFinish(true);
+
+			// Save load test
+			return loadTestService.save(loadTest.get());
+		}
+		// TODO
 		return null;
 	}
-
 }

@@ -23,12 +23,21 @@ jmeterReportingApp.factory("LoadTest", function ($http) {
             return $http.get(url);
         },
 
+        findOne : function(name, version, run) {
+        	var url = API_URI + '/' + name + '/' + version + '/' + run;
+            return $http.get(url);
+        },
+
 	    findLast : function(name) {
 	        return $http.get(API_URI + '/find_last/' + name);
 	    },
 
 	    findLastRef : function(name) {
 	        return $http.get(API_URI + '/find_last_ref/' + name);
+	    },
+
+	    updateReference : function(name, version, run, reference) {
+	        return $http.post('/api/reference/' + name + '/' + version + '/' + run + '/' + reference);
 	    }
     
     };
@@ -40,10 +49,10 @@ jmeterReportingApp.factory("Series", [ '$http', function (async) {
 
     return {
 
-        aggregate_by_timestamp : function(name, version, run, details, interval) {
-        	var url = API_URI + '/aggregate_by_timestamp/' + name + '/' + version + '/' + run + '?details=' + details
+        aggregate_by_timestamp : function(name, version, run, interval) {
+        	var url = API_URI + '/aggregate_by_timestamp/' + name + '/' + version + '/' + run;
         	if (interval != undefined) {
-        		 url = url + '&interval=' + interval
+        		 url = url + '?interval=' + interval
         	}
             return async({
             	method: 'GET',
@@ -58,11 +67,14 @@ jmeterReportingApp.factory("Series", [ '$http', function (async) {
             });
 	    },
 
-        aggregate_by_sampler : function(name, version, run, details, interval) {
+        aggregate_by_sampler : function(name, version, run, sampler, details, interval) {
         	var url = API_URI + '/aggregate_by_sampler/' + name + '/' + version + '/' + run + '?details=' + details
         	if (interval != undefined) {
-       		 url = url + '&interval=' + interval
-       	}
+       			url = url + '&interval=' + interval
+        	}
+        	if (sampler != undefined) {
+       			url = url + '&sampler=' + sampler
+        	}
             return async({
             	method: 'GET',
             	url: url

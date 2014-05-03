@@ -1,0 +1,18 @@
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#history/{{path.name}}">{{path.name}}</a></li>
+  <li><a href="#history/{{path.name}}/{{path.version}}">{{path.version}}</a></li>
+  <li><a href="#load_test/{{path.name}}/{{path.version}}/{{path.run}}">{{path.run}}</a></li>
+  <li class="active">{{path.sampler}}</li>
+</ol>
+
+<div class="col-lg-12">
+	<div class="panel panel-info">
+		<div class="panel-heading">Actions</div>
+		Aggregation interval : <select class="form-control" ng-model="interval" ng-options="c.name for c in intervals" ng-change="updateInterval(false)"></select><br>
+	</div>
+	<div class="panel panel-info" ng-repeat="sampler in samplers">
+		<div class="panel-heading">Average Response Times (ms) : {{sampler.label}}</div>
+		<div id="{{sampler.label}}" style="height: 350px;"></div>
+	</div>
+</div>

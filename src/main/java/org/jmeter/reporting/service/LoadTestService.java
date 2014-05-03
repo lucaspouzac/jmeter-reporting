@@ -1,6 +1,3 @@
-/**
- *
- */
 package org.jmeter.reporting.service;
 
 import java.util.Iterator;
@@ -8,7 +5,6 @@ import java.util.Iterator;
 import javax.inject.Named;
 
 import org.jmeter.reporting.domain.LoadTest;
-import org.jmeter.reporting.domain.LoadTestKey;
 import org.jongo.Distinct;
 import org.jongo.Find;
 import org.jongo.FindOne;
@@ -18,9 +14,6 @@ import restx.jongo.JongoCollection;
 
 import com.google.common.base.Optional;
 
-/**
- *
- */
 @Component
 public class LoadTestService {
 
@@ -34,18 +27,21 @@ public class LoadTestService {
 		Find find = loadTests.get().find();
 		return find.skip(skip).limit(limit).as(LoadTest.class);
 	}
-	
+
 	public Iterable<LoadTest> find(String name, int skip, int limit) {
 		return find("{ ltKey.name: # }", skip, limit, name);
 	}
 
-	public Iterable<LoadTest> find(String name, String version, int skip, int limit) {
-		return find("{ ltKey.name: #, ltKey.version: # }", skip, limit, name, version);
+	public Iterable<LoadTest> find(String name, String version, int skip,
+			int limit) {
+		return find("{ ltKey.name: #, ltKey.version: # }", skip, limit, name,
+				version);
 	}
 
 	public Optional<LoadTest> findByKey(String name, String version, Integer run) {
-		FindOne find = loadTests.get().findOne("{name: #, version: #, run: #}",
-				name, version, run);
+		FindOne find = loadTests.get().findOne(
+				"{ltKey.name: #, ltKey.version: #, ltKey.run: #}", name,
+				version, run);
 		return Optional.fromNullable(find.as(LoadTest.class));
 	}
 
@@ -66,8 +62,8 @@ public class LoadTestService {
 			String version) {
 		LoadTest result = null;
 
-		Find find = loadTests.get()
-				.find("{ ltKey.name: #, ltKey.version: # }", name, version);
+		Find find = loadTests.get().find("{ ltKey.name: #, ltKey.version: # }",
+				name, version);
 		find.limit(1);
 		find.sort("{ltKey.run: -1}");
 		Iterable<LoadTest> ldTests = find.as(LoadTest.class);
@@ -78,28 +74,30 @@ public class LoadTestService {
 		return Optional.fromNullable(result);
 	}
 
-	public LoadTest createNew(String name, String version, int run) {
-		// Create Load Test
-		LoadTest loadTest = new LoadTest();
-		LoadTestKey loadTestKey = new LoadTestKey();
-		loadTestKey.setName(name);
-		loadTestKey.setVersion(version);
-		loadTestKey.setRun(run);
-		loadTest.setLoadTestKey(loadTestKey);
-
+	public LoadTest save(LoadTest loadTest) {
 		// Save
 		loadTests.get().save(loadTest);
-
 		return loadTest;
 	}
-	
 
-	private Iterable<LoadTest> find(String query, int skip, int limit, Object... parameters) {
+	public LoadTest updateReference(String name, String version, int run,
+			boolean reference) {
+		LoadTest loadTest = findByKey(name, version, run).get();
+		loadTest.setReference(reference);
+		loadTests
+				.get()
+				.update("{ltKey.name: #, ltKey.version: #, ltKey.run: #}",
+						name, version, run).with(loadTest);
+		return loadTest;
+	}
+
+	private Iterable<LoadTest> find(String query, int skip, int limit,
+			Object... parameters) {
 		Find find = loadTests.get().find(query, parameters);
 		find.sort("{date: -1}");
 		return find.skip(skip).limit(limit).as(LoadTest.class);
 	}
-	
+
 	private LoadTest findLast(String query, Object... parameters) {
 		Find find = loadTests.get().find(query, parameters);
 		find.sort("{date: -1}");

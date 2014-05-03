@@ -18,6 +18,10 @@ jmeterReportingApp.config(['$routeProvider', function($routeProvider) {
 	            templateUrl: 'partials/loadtest.html',
 	            controller : 'LoadTestCtrl'
 	        })
+	        .when('/details/:name/:version/:run', {
+	            templateUrl: 'partials/details.html',
+	            controller : 'DetailsCtrl'
+	        })
 	        .when('/history/:name', {
 	            templateUrl: 'partials/history.html',
 	            controller : 'HistoryCtrl'

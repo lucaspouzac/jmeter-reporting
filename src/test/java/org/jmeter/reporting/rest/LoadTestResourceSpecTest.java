@@ -6,7 +6,7 @@ import restx.jongo.specs.tests.MongoRestxSpecTestsRunner;
 import restx.tests.FindSpecsIn;
 
 @RunWith(MongoRestxSpecTestsRunner.class)
-@FindSpecsIn("specs/loadtest")
+@FindSpecsIn("specs/load-test")
 public class LoadTestResourceSpecTest {
 
 }

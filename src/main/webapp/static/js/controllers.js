@@ -26,7 +26,7 @@ jmeterReportingControllers.controller("HomeCtrl" ,function ($scope, LoadTest) {
 });
 
 //LoadTest Controller
-jmeterReportingControllers.controller("LoadTestCtrl" ,function ($scope, $routeParams, Series, Chart) {
+jmeterReportingControllers.controller("LoadTestCtrl" ,function ($scope, $routeParams, LoadTest, Series, Chart) {
 	$scope.path = {
 		name: $routeParams.name,
 		version: $routeParams.version,
@@ -48,19 +48,23 @@ jmeterReportingControllers.controller("LoadTestCtrl" ,function ($scope, $routePa
                         {name:'1 h', value: 3600000}
                      ];
     $scope.interval = $scope.intervals[1];
+
+	LoadTest.findOne($routeParams.name, $routeParams.version, $routeParams.run).success(function(resp){
+        $scope.loadTest = resp;
+    });
     
+	$scope.updateReference = function(ref) {
+		LoadTest.updateReference($routeParams.name, $routeParams.version, $routeParams.run, ref).success(function(resp){
+    		$scope.loadTest = resp;
+        });
+	}
+	
     $scope.updateInterval = function(init) {		
-    	Series.aggregate_by_sampler($routeParams.name, $routeParams.version, $routeParams.run, false, $scope.interval.value).success(function(series){
+    	Series.aggregate_by_sampler($routeParams.name, $routeParams.version, $routeParams.run, undefined, false, $scope.interval.value).success(function(series){
     		$scope.samplers = series;
         });
     	
-    	Series.aggregate_by_sampler($routeParams.name, $routeParams.version, $routeParams.run, true, $scope.interval.value).success(function(series){
-    		series.forEach(function(entry) {
-    	    	Chart.draw(entry.label, entry.aggs_timestamp, 'timestamp', ['avg_times_success', 'avg_times_error'], ['Average Times Success', 'Average Times Error'], ['green','red']);
-    	    });
-        });
-    	
-    	Series.aggregate_by_timestamp($routeParams.name, $routeParams.version, $routeParams.run, true, $scope.interval.value).success(function(series){
+    	Series.aggregate_by_timestamp($routeParams.name, $routeParams.version, $routeParams.run, $scope.interval.value).success(function(series){
     		if (init) {
         		$scope.global = series;
         		$scope.chartThroughput = Chart.draw('throughput', series.aggs_timestamp, 'timestamp', ['throughput_success', 'throughput_error'], ['Throughput Success', 'Throughput Error'], ['green','red']);
@@ -100,6 +104,47 @@ jmeterReportingControllers.controller("HistoryCtrl" ,function ($scope, $routePar
 	LoadTest.find($routeParams.name, $routeParams.version, 0, 0).success(function(resp){
         $scope.loadTests = resp;
     });    
+});
+
+
+//Details Controller
+jmeterReportingControllers.controller("DetailsCtrl" ,function ($scope, $routeParams, Series, Chart) {
+	$scope.path = {
+			name: $routeParams.name,
+			version: $routeParams.version,
+			run: $routeParams.run,
+			sampler: $routeParams.sampler
+	}
+    $scope.intervals = [
+                        {name:'500 ms', value: 500},
+                        {name:'1 s', value: 1000},
+                        {name:'5 s', value: 5000},
+                        {name:'10 s', value: 10000},
+                        {name:'15 s', value: 15000},
+                        {name:'30 s', value: 30000},
+                        {name:'1 m', value: 60000},
+                        {name:'5 m', value: 300000},
+                        {name:'10 m', value: 600000},
+                        {name:'15 m', value: 900000},
+                        {name:'30 m', value: 1800000},
+                        {name:'1 h', value: 3600000}
+                     ];
+    $scope.interval = $scope.intervals[1];
+    
+    $scope.updateInterval = function(init) {
+    	Series.aggregate_by_sampler($routeParams.name, $routeParams.version, $routeParams.run, $routeParams.sampler, false, $scope.interval.value).success(function(series){
+    		$scope.samplers = series;
+        });
+    	
+    	Series.aggregate_by_sampler($routeParams.name, $routeParams.version, $routeParams.run, $routeParams.sampler, true, $scope.interval.value).success(function(series){
+    		series.forEach(function(entry) {
+    	    	Chart.draw(entry.label, entry.aggs_timestamp, 'timestamp', ['avg_times_success', 'avg_times_error'], ['Average Times Success', 'Average Times Error'], ['green','red']);
+    	    });
+        });	
+    }
+    
+    $scope.updateInterval(true);
+
 });
 
 //Config Load Test Controller

@@ -25,11 +25,33 @@ public class LoadTest {
 	@NotNull
 	private Date date = new Date();
 
-	@JsonProperty(value = "st")
-	private int status;
+	@JsonProperty(value = "fn")
+	@NotNull
+	private boolean finish;
 
 	@JsonProperty(value = "ref")
+	@NotNull
 	private boolean reference;
+
+	@JsonProperty(value = "iterations")
+	private int iterations;
+
+	@JsonProperty(value = "avg_times")
+	private double averageTimes;
+
+	@JsonProperty(value = "avg_byt")
+	private double averageByte;
+
+	@JsonProperty(value = "success")
+	private int success;
+
+	public LoadTest() {
+	}
+
+	public LoadTest(LoadTestKey loadTestKey) {
+		super();
+		this.loadTestKey = loadTestKey;
+	}
 
 	public String getKey() {
 		return key;
@@ -55,12 +77,12 @@ public class LoadTest {
 		this.date = date;
 	}
 
-	public int getStatus() {
-		return status;
+	public boolean isFinish() {
+		return finish;
 	}
 
-	public void setStatus(int pStatus) {
-		status = pStatus;
+	public void setFinish(boolean finish) {
+		this.finish = finish;
 	}
 
 	public boolean isReference() {
@@ -69,6 +91,38 @@ public class LoadTest {
 
 	public void setReference(boolean pReference) {
 		reference = pReference;
+	}
+
+	public int getIterations() {
+		return iterations;
+	}
+
+	public void setIterations(int iterations) {
+		this.iterations = iterations;
+	}
+
+	public double getAverageTimes() {
+		return averageTimes;
+	}
+
+	public void setAverageTimes(double averageTimes) {
+		this.averageTimes = averageTimes;
+	}
+
+	public double getAverageByte() {
+		return averageByte;
+	}
+
+	public void setAverageByte(double averageByte) {
+		this.averageByte = averageByte;
+	}
+
+	public int getSuccess() {
+		return success;
+	}
+
+	public void setSuccess(int success) {
+		this.success = success;
 	}
 
 }
