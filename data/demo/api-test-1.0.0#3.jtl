@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="2" lt="2" ts="1399041967878" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-1" dt="text" by="1566" ng="4" na="4"/>
+<httpSample t="2" lt="2" ts="1399041970518" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-2" dt="text" by="776" ng="7" na="7"/>
+<httpSample t="1" lt="1" ts="1399041971168" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-5" dt="text" by="776" ng="8" na="8"/>
+<httpSample t="2" lt="2" ts="1399041971562" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-2" dt="text" by="1566" ng="8" na="8"/>
+<httpSample t="2" lt="2" ts="1399041972196" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-4" dt="text" by="776" ng="9" na="9"/>
+<httpSample t="2" lt="2" ts="1399041973071" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-3" dt="text" by="776" ng="10" na="10"/>
+<httpSample t="2" lt="2" ts="1399041974600" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-4" dt="text" by="1566" ng="11" na="11"/>
+<httpSample t="2" lt="2" ts="1399041974601" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-10" dt="text" by="776" ng="11" na="11"/>
+<httpSample t="2" lt="2" ts="1399041974839" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-7" dt="text" by="1566" ng="11" na="11"/>
+<httpSample t="3" lt="3" ts="1399041974968" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-8" dt="text" by="776" ng="11" na="11"/>
+<httpSample t="3" lt="3" ts="1399041975036" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-1" dt="text" by="1566" ng="12" na="12"/>
+<httpSample t="2" lt="2" ts="1399041975881" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-6" dt="text" by="1566" ng="12" na="12"/>
+<httpSample t="4" lt="4" ts="1399041976302" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-4" dt="text" by="1566" ng="13" na="13"/>
+<httpSample t="3" lt="3" ts="1399041976384" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-5" dt="text" by="1566" ng="13" na="13"/>
+<httpSample t="3" lt="3" ts="1399041977044" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-9" dt="text" by="776" ng="14" na="14"/>
+<httpSample t="1" lt="1" ts="1399041977131" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-11" dt="text" by="776" ng="14" na="14"/>
+<httpSample t="3" lt="3" ts="1399041977571" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="776" ng="14" na="14"/>
+<httpSample t="2" lt="2" ts="1399041977895" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-2" dt="text" by="776" ng="14" na="14"/>
+<httpSample t="2" lt="2" ts="1399041978091" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-3" dt="text" by="1566" ng="15" na="15"/>
+<httpSample t="4" lt="4" ts="1399041978652" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-1" dt="text" by="1566" ng="15" na="15"/>
+<httpSample t="3" lt="3" ts="1399041979091" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-11" dt="text" by="775" ng="16" na="16"/>
+<httpSample t="2" lt="0" ts="1399041979374" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-7" dt="text" by="2364" ng="16" na="16"/>
+<httpSample t="3" lt="3" ts="1399041979854" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-2" dt="text" by="775" ng="16" na="16"/>
+<httpSample t="2" lt="0" ts="1399041980154" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-16" dt="text" by="2364" ng="17" na="17"/>
+<httpSample t="3" lt="3" ts="1399041980608" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-8" dt="text" by="1566" ng="17" na="17"/>
+<httpSample t="3" lt="3" ts="1399041980705" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="775" ng="17" na="17"/>
+<httpSample t="4" lt="3" ts="1399041980774" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-15" dt="text" by="1566" ng="17" na="17"/>
+<httpSample t="3" lt="3" ts="1399041980814" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-4" dt="text" by="1566" ng="17" na="17"/>
+<httpSample t="3" lt="3" ts="1399041981253" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-10" dt="text" by="1566" ng="18" na="18"/>
+<httpSample t="5" lt="5" ts="1399041981696" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-5" dt="text" by="1566" ng="18" na="18"/>
+<httpSample t="3" lt="3" ts="1399041981986" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-17" dt="text" by="776" ng="18" na="18"/>
+<httpSample t="2" lt="2" ts="1399041982064" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-13" dt="text" by="1566" ng="19" na="19"/>
+<httpSample t="4" lt="4" ts="1399041982192" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-6" dt="text" by="1566" ng="19" na="19"/>
+<httpSample t="2" lt="2" ts="1399041982251" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-1" dt="text" by="776" ng="19" na="19"/>
+<httpSample t="2" lt="0" ts="1399041982470" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-14" dt="text" by="2364" ng="19" na="19"/>
+<httpSample t="3" lt="3" ts="1399041982540" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-11" dt="text" by="1566" ng="19" na="19"/>
+<httpSample t="2" lt="2" ts="1399041982645" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-9" dt="text" by="776" ng="19" na="19"/>
+<httpSample t="2" lt="2" ts="1399041982674" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-16" dt="text" by="1566" ng="19" na="19"/>
+<httpSample t="1" lt="1" ts="1399041982746" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-5" dt="text" by="776" ng="19" na="19"/>
+<httpSample t="3" lt="3" ts="1399041982749" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-18" dt="text" by="1566" ng="19" na="19"/>
+<httpSample t="4" lt="4" ts="1399041982877" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-10" dt="text" by="1566" ng="19" na="19"/>
+<httpSample t="3" lt="3" ts="1399041983899" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-1" dt="text" by="775" ng="20" na="20"/>
+<httpSample t="3" lt="3" ts="1399041984184" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-19" dt="text" by="1566" ng="21" na="21"/>
+<httpSample t="3" lt="3" ts="1399041984359" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-14" dt="text" by="1566" ng="21" na="21"/>
+<httpSample t="3" lt="2" ts="1399041984621" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-2" dt="text" by="775" ng="21" na="21"/>
+<httpSample t="3" lt="3" ts="1399041984995" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-11" dt="text" by="776" ng="21" na="21"/>
+<httpSample t="3" lt="3" ts="1399041985338" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-7" dt="text" by="776" ng="22" na="22"/>
+<httpSample t="4" lt="4" ts="1399041985371" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-3" dt="text" by="1566" ng="22" na="22"/>
+<httpSample t="2" lt="2" ts="1399041985525" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-19" dt="text" by="776" ng="22" na="22"/>
+<httpSample t="2" lt="2" ts="1399041985634" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-18" dt="text" by="776" ng="22" na="22"/>
+<httpSample t="3" lt="3" ts="1399041985971" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-14" dt="text" by="776" ng="22" na="22"/>
+<httpSample t="3" lt="3" ts="1399041986400" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-5" dt="text" by="775" ng="23" na="23"/>
+<httpSample t="4" lt="4" ts="1399041986812" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-1" dt="text" by="775" ng="23" na="23"/>
+<httpSample t="2" lt="2" ts="1399041987269" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-23" dt="text" by="776" ng="24" na="24"/>
+<httpSample t="2" lt="2" ts="1399041987412" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-6" dt="text" by="776" ng="24" na="24"/>
+<httpSample t="2" lt="2" ts="1399041987591" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-3" dt="text" by="776" ng="24" na="24"/>
+<httpSample t="4" lt="4" ts="1399041987763" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-16" dt="text" by="1566" ng="24" na="24"/>
+<httpSample t="3" lt="3" ts="1399041987776" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-12" dt="text" by="1566" ng="24" na="24"/>
+<httpSample t="2" lt="2" ts="1399041987869" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-20" dt="text" by="1566" ng="24" na="24"/>
+<httpSample t="2" lt="2" ts="1399041987881" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-4" dt="text" by="776" ng="24" na="24"/>
+<httpSample t="4" lt="4" ts="1399041988202" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-8" dt="text" by="1566" ng="25" na="25"/>
+<httpSample t="3" lt="3" ts="1399041988492" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-17" dt="text" by="1566" ng="25" na="25"/>
+<httpSample t="3" lt="0" ts="1399041988742" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-15" dt="text" by="2364" ng="25" na="25"/>
+<httpSample t="3" lt="0" ts="1399041988766" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-9" dt="text" by="2364" ng="25" na="25"/>
+<httpSample t="4" lt="4" ts="1399041989043" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-1" dt="text" by="1566" ng="26" na="26"/>
+<httpSample t="4" lt="4" ts="1399041989876" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-13" dt="text" by="1566" ng="26" na="26"/>
+<httpSample t="1" lt="1" ts="1399041989940" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-10" dt="text" by="776" ng="26" na="26"/>
+<httpSample t="4" lt="4" ts="1399041990148" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-12" dt="text" by="1566" ng="27" na="27"/>
+<httpSample t="3" lt="0" ts="1399041990595" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-17" dt="text" by="2364" ng="27" na="27"/>
+<httpSample t="3" lt="0" ts="1399041990700" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-2" dt="text" by="2364" ng="27" na="27"/>
+<httpSample t="3" lt="0" ts="1399041990757" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-22" dt="text" by="2364" ng="27" na="27"/>
+<httpSample t="2" lt="2" ts="1399041991014" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-18" dt="text" by="776" ng="28" na="28"/>
+<httpSample t="4" lt="3" ts="1399041991407" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-24" dt="text" by="1566" ng="28" na="28"/>
+<httpSample t="2" lt="2" ts="1399041991424" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-11" dt="text" by="1566" ng="28" na="28"/>
+<httpSample t="3" lt="3" ts="1399041991509" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-4" dt="text" by="1566" ng="28" na="28"/>
+<httpSample t="3" lt="3" ts="1399041991582" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-16" dt="text" by="776" ng="28" na="28"/>
+<httpSample t="1" lt="1" ts="1399041991758" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-21" dt="text" by="1566" ng="28" na="28"/>
+<httpSample t="2" lt="2" ts="1399041991843" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-20" dt="text" by="776" ng="28" na="28"/>
+<httpSample t="4" lt="4" ts="1399041991955" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-13" dt="text" by="1566" ng="28" na="28"/>
+<httpSample t="2" lt="2" ts="1399041992030" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-19" dt="text" by="1566" ng="29" na="29"/>
+<httpSample t="2" lt="2" ts="1399041992088" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="776" ng="29" na="29"/>
+<httpSample t="1" lt="1" ts="1399041992168" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-25" dt="text" by="776" ng="29" na="29"/>
+<httpSample t="2" lt="2" ts="1399041992271" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-27" dt="text" by="776" ng="29" na="29"/>
+<httpSample t="1" lt="1" ts="1399041992516" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-26" dt="text" by="776" ng="29" na="29"/>
+<httpSample t="2" lt="2" ts="1399041992902" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-7" dt="text" by="1566" ng="29" na="29"/>
+<httpSample t="2" lt="2" ts="1399041993127" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-15" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041993157" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-18" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="1" lt="1" ts="1399041993224" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-21" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399041993247" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-8" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399041993254" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-14" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041993414" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-17" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041993581" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-13" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399041993603" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-23" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="1" lt="1" ts="1399041993607" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-5" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399041993635" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-26" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041993790" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-25" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399041993941" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-28" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399041993941" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-9" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041994093" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-29" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041994590" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="2" lt="0" ts="1399041994791" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-6" dt="text" by="2364" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041994919" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-18" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041995088" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-3" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041995326" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-7" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041995745" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-10" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="5" lt="5" ts="1399041995902" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-6" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041995906" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-11" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041995957" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-24" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041995972" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-1" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041996000" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-4" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041996053" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-27" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041996389" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-28" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="0" ts="1399041996543" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-2" dt="text" by="2364" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399041996558" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-26" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041996638" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041996685" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-30" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041996914" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-19" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041997163" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-4" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041997294" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-21" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041997467" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-5" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041997506" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-13" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399041997525" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-29" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041997566" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-20" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041997687" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-3" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041997884" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-22" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="0" ts="1399041997975" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-24" dt="text" by="2364" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041998218" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-2" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041998255" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-6" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399041998318" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-9" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041998330" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-11" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="1" lt="1" ts="1399041998343" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-23" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="3" ts="1399041998455" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-30" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041998947" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-16" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041999023" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-17" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041999146" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-26" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399041999300" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-6" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399041999355" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-9" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399041999524" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-27" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042000043" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-19" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042000160" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-10" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042000208" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042000351" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-8" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042000446" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-15" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042000468" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-21" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="0" ts="1399042000629" s="false" lb="Requête 1" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Groupe d&apos;unités 1-16" dt="text" by="2364" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042000631" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-25" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042000802" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-29" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042000978" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-26" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042001043" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-13" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042001080" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-14" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042001270" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-3" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="1" lt="1" ts="1399042001358" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-28" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042001536" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-5" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042001588" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-23" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042001726" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-15" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042001806" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-25" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042002126" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-8" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042002270" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-11" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042002475" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-28" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042002560" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-22" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042002726" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-5" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042002786" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-14" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042002790" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-6" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042002871" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-18" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042003124" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-30" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042003318" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-7" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042003406" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-1" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="3" ts="1399042003639" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-4" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042003692" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-20" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042004231" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-5" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042004344" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-21" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042004474" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-9" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042004659" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-24" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042004658" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-29" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042004692" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-26" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042004737" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-23" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042004753" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-16" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042004849" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-20" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042005219" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-4" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042005801" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-2" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042005804" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-10" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042005900" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-27" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042006235" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-22" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042006268" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-19" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042006382" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-26" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042006501" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-30" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042006597" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-17" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042007080" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-6" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042007135" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-5" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042007589" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-12" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042007615" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-1" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042007621" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-24" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042007736" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-14" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042007761" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-13" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042007910" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-8" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042008098" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-17" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042008220" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-28" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042008395" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-18" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042008565" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-15" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042008633" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-24" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042008840" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-3" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042009028" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-4" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042009038" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-23" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042009160" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-27" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="1" lt="1" ts="1399042009224" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-19" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042009252" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-25" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042009478" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-11" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042009506" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-20" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042009696" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-7" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042009925" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-24" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042010037" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-21" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042010269" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-26" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042010417" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-5" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042010811" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-29" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042010967" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-10" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042011413" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-18" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="1" lt="1" ts="1399042011477" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-30" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042011637" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-28" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042011726" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042011829" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-16" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042011942" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-6" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042012027" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-9" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042012091" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-15" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042012504" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-17" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042012831" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042012908" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-21" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042012955" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-19" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="2" ts="1399042012967" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-25" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042012997" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-6" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042013243" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-20" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042013451" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-16" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042013494" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-2" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042013520" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-26" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042013700" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-13" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042013919" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-3" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042014000" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-25" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042014052" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-8" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042014130" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-22" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042014236" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-30" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042014349" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-1" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042014554" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-14" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042014875" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-13" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042015177" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-23" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042015189" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-21" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042015488" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-17" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042015505" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-11" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042015809" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-15" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042015963" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-27" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042016018" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-10" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="1" lt="1" ts="1399042016054" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-19" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042016120" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-9" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042016299" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-13" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042016492" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-4" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042016563" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-24" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042016954" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-6" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042017262" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-29" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042017579" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-7" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042017604" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-20" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="1" lt="1" ts="1399042017640" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-22" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="5" lt="5" ts="1399042017962" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-1" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042018053" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-2" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042018127" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-5" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042018292" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-29" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042018747" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-30" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042018905" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-8" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042019047" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-18" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042019170" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-28" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042019509" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-6" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042019715" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-11" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042019776" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-14" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042019899" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-1" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042019961" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-25" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042019971" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-19" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042020259" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-22" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042020373" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042020518" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-20" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042020540" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-2" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="1" lt="1" ts="1399042020594" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-26" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042020608" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-16" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042020642" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-3" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042020915" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-18" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042021410" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-27" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042021485" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-21" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042021586" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-17" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042021631" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-9" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="5" lt="5" ts="1399042021934" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-6" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042022036" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-7" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="1" lt="1" ts="1399042022078" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-23" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042022614" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-15" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042022698" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042022715" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-4" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042022779" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-19" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042022836" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-18" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042022898" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-25" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042023001" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-14" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042023123" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-10" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042023408" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-24" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042023542" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-16" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042023562" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-2" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042023681" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-13" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042023751" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-7" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042023826" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-29" dt="text" by="1566" ng="30" na="30"/>
+<httpSample t="2" lt="2" ts="1399042023950" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-11" dt="text" by="776" ng="30" na="30"/>
+<httpSample t="4" lt="4" ts="1399042024431" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-14" dt="text" by="775" ng="30" na="30"/>
+<httpSample t="3" lt="3" ts="1399042024686" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-20" dt="text" by="776" ng="29" na="29"/>
+<httpSample t="3" lt="3" ts="1399042024834" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-6" dt="text" by="1566" ng="28" na="28"/>
+<httpSample t="3" lt="3" ts="1399042024848" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-8" dt="text" by="1566" ng="27" na="27"/>
+<httpSample t="3" lt="3" ts="1399042024868" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-19" dt="text" by="1566" ng="26" na="26"/>
+<httpSample t="4" lt="4" ts="1399042025143" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-21" dt="text" by="1566" ng="25" na="25"/>
+<httpSample t="4" lt="4" ts="1399042025166" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-5" dt="text" by="1566" ng="24" na="24"/>
+<httpSample t="5" lt="4" ts="1399042025166" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-28" dt="text" by="1566" ng="24" na="24"/>
+<httpSample t="2" lt="2" ts="1399042025182" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-25" dt="text" by="775" ng="22" na="22"/>
+<httpSample t="5" lt="5" ts="1399042025213" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-9" dt="text" by="1566" ng="21" na="21"/>
+<httpSample t="3" lt="3" ts="1399042025664" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-10" dt="text" by="776" ng="20" na="20"/>
+<httpSample t="3" lt="3" ts="1399042025669" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-30" dt="text" by="776" ng="19" na="19"/>
+<httpSample t="3" lt="3" ts="1399042026599" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-3" dt="text" by="776" ng="18" na="18"/>
+<httpSample t="4" lt="4" ts="1399042026750" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-17" dt="text" by="1566" ng="17" na="17"/>
+<httpSample t="2" lt="2" ts="1399042026802" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-18" dt="text" by="1566" ng="16" na="16"/>
+<httpSample t="3" lt="3" ts="1399042027147" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-1" dt="text" by="776" ng="15" na="15"/>
+<httpSample t="1" lt="1" ts="1399042027193" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-22" dt="text" by="776" ng="14" na="14"/>
+<httpSample t="3" lt="3" ts="1399042027237" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-11" dt="text" by="1566" ng="13" na="13"/>
+<httpSample t="4" lt="4" ts="1399042027370" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-16" dt="text" by="1566" ng="12" na="12"/>
+<httpSample t="2" lt="2" ts="1399042027426" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-13" dt="text" by="775" ng="11" na="11"/>
+<httpSample t="3" lt="3" ts="1399042027744" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-26" dt="text" by="776" ng="10" na="10"/>
+<httpSample t="3" lt="3" ts="1399042027752" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-4" dt="text" by="1566" ng="9" na="9"/>
+<httpSample t="3" lt="3" ts="1399042028377" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-27" dt="text" by="776" ng="8" na="8"/>
+<httpSample t="3" lt="3" ts="1399042029073" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-23" dt="text" by="776" ng="7" na="7"/>
+<httpSample t="5" lt="5" ts="1399042029420" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-2" dt="text" by="1566" ng="6" na="6"/>
+<httpSample t="2" lt="2" ts="1399042029520" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-12" dt="text" by="776" ng="5" na="5"/>
+<httpSample t="4" lt="4" ts="1399042029718" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-15" dt="text" by="1566" ng="4" na="4"/>
+<httpSample t="2" lt="2" ts="1399042030119" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-7" dt="text" by="776" ng="3" na="3"/>
+<httpSample t="5" lt="4" ts="1399042030822" s="false" lb="Requête 2" rc="404" rm="Not Found" tn="Groupe d&apos;unités 1-24" dt="text" by="1566" ng="2" na="2"/>
+<httpSample t="2" lt="2" ts="1399042031655" s="true" lb="Requête 1" rc="200" rm="OK" tn="Groupe d&apos;unités 1-29" dt="text" by="776" ng="1" na="1"/>
+
+</testResults>
